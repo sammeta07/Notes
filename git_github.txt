@@ -95,11 +95,14 @@ by above command we have added tag to that recent commit with name drag_drop_wor
 after that we created some new files and did some modification and then committed. but this disturbed the project on that branch. now we want to go back to that working commit where we had given a tag. to do that 
 
 git checkout drag_drop_working
-
+-------------------------------------------------------------------------------------------------
 rollback  -
 we have made multiple commits suppose commit-1,commit-2,commit-3..............commit-10.
 now we are getting some problems after commit-8. I want to go back to commot-8. going back to that working commit is called rollback.rollback will remove all the commits after the commit-8.
 simply going back to any commit of that branch on the repo is roll back.
+
+
+-------------------------------------------------------------------------------------------------
 
 upstream  repository-
 when we clone a repo from github, the github repo is considered the upstream repo for our local repo.
@@ -139,8 +142,10 @@ i realised that i have to do some more changes in product_1 file and then after 
 so to remove product_1 from stagging we have to run command any one from below
 
 1. git reset product_1.ts
-2. git rm --cached product_1.ts
-objects
+2. git reset HEAD product_1.ts
+3. git rm --cached product_1.ts
+4. git reset -p
+
 on running this command git will not track that file.
 all the content of that file will be there. no data loss.
 ------------------------------------------------------------------------
