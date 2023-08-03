@@ -205,7 +205,57 @@ rename - to rename a file name
 git mv oldfilename.ext newfilename.ext
 ----------------------------------------------------
 
+branch  -
 
+git branch
+current working branch will be shown in green color with * prefix.
+
+creatw a new branch
+git branch feature_1
+
+switch to newely created branch
+git checkout feature_1
+
+create a new branch and checkout to that branch at a same time
+git checkout -b feature_2
+
+detete specific branch - (you should not be in the same branch which you are going to delete. so checkout to other branch)
+git branch -d feature_2 (if you have merged this branch to other branch)
+git branch -D feature_2 (if you have not merged this branch to other branch)
+
+
+------------------------------------------------------------------------------------
+rebase - 
+when we want to transfer complete work of one branch to another branch we use rebase.
+i have 2 branches feature_1 and feature_2. both the branches are having different files and folder.
+to transfer all the work of featute_1 to feature_2, 1st we have to go to feature_ branch.
+then run command
+
+git rebase feature_1
+
+this will not replace feature_2 with feature_1.
+this will add all the work of feature one to feature_2.
+
+
+
+
+-------------------------------------------------------------------------------------
+stash
+i a, working on branch A . Did some changes on branch A. now I have to work on branch B. 
+I will try to chwckout to branch B but i got error either commit or stash changes before checkout to B, because there are some changes in branch A. I dont want to commit those changes. so here stash is used to save the changes in working directory. and now i can checkout to any oyher branch.
+
+git stash
+
+when i come back to branch A, i see my changes are not there which i did before stash. to get all my changes i need to run a command.
+
+git stash pop
+
+git stash list - list all the stash
+git stash drop - drops all the satsh
+
+
+
+--------------------------------------------------------------------------------------------------
 
 
 
