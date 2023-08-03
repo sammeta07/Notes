@@ -83,10 +83,10 @@ branch  -
 branch is a separate line of development that allows us to work on different parts pf project. which does not affect the other branches of our repo.
 ***
 when we create a new branch it doesnot create a copy of all the files and folder in our repo. It creates a new pointer to a specific commit in our repo.
-
+---------------------------------------------------------------------------------------
 tag   -
 a tag is a label that is assigned to a specific commit in a repo.
-it is used to mark imp points inthe proect history.
+it is used to mark imp points in the proejt history.
 they are simply a way to mark a specific commit and make it easy to refer to it in the future.
 
 git tag tagname (ex  git tag drag_drop_working)
@@ -95,6 +95,16 @@ by above command we have added tag to that recent commit with name drag_drop_wor
 after that we created some new files and did some modification and then committed. but this disturbed the project on that branch. now we want to go back to that working commit where we had given a tag. to do that 
 
 git checkout drag_drop_working
+
+adding a tag to specific commit
+git tag v0.1 605ec110e07e39a8825e64a71423166831140857
+
+git tag --list 
+will  give you the list of all the tags
+
+delete a tag - 
+git tag -d drag_drop_working
+
 -------------------------------------------------------------------------------------------------
 rollback  -
 we have made multiple commits suppose commit-1,commit-2,commit-3..............commit-10.
@@ -193,6 +203,11 @@ git rm product_2.ts
 
 rename - to rename a file name
 git mv oldfilename.ext newfilename.ext
+----------------------------------------------------
+
+
+
+
 
 
 
