@@ -1,0 +1,167 @@
+
+Git -
+git is a free open source distributed version control system.
+designed to handle projects.
+git is a tool.
+
+
+Github -
+is webhosting service provider.
+here we put or source code of any project. add collaborators, create branch and may more.
+github is a web based hosting service which uses git tool.
+
+Repository -
+collections of files and directories that are managed by git.
+contains all the informantion about project,its history(who/when/where).
+It allows multiple collaborators.
+
+Local Repository -
+is the Repository that exists in our own computer.
+contains files, branches, commits and other informantion related to our project.
+we can use git commands to manage it.
+
+Remote Repository -
+is a copy of Repository that exists on a server.(github/gitlab/bitbucket).
+allows you to share code to other developres and collaborate on same project.
+
+.git directory  -
+when run *git int* command on any local directory, it becomes local Repository and .git hidded directory is created.
+GIT uses this directory to store all the metadata(commit history, branches, tags, config settings) for that Repository.
+
+files and folders in .git directory-
+  head            - 
+  objects         -folder
+  refs            -folder
+  configs         -
+  hooks           -folder
+  index           -
+  logs            -folder
+  branches        -
+  description     -
+  info            -folder
+  FETCH_HEAD      -
+  COMMIT_EDITMSG  -
+  ORIG_HEAD       -
+
+untracked files -
+when we create a new file in our git Repository, git doesnot automatically start trackingit.
+git is unaware of this file, so git doesnot monitor this file for any changes.
+if you accidently detete this untracked file ,it will be lost forever.
+
+tracked file  -
+when you initially create a git Repository, no files are tracked by default.
+you need to tell git which files you want to track.
+command - git add filename.extension 
+
+unstaged  -
+when we do any changes in tracked file, git is aware of those changes but they are considered to be unstagged untill we expictly tell git to include them in the staging area.
+when we rename a file or do some changes in that file this will not be in staging area by default. we have to run git add command to move that file in staging.
+command- git status will show you that the file has been modified,but it will be listed as unstagged.
+unstagged shanges were not included in next commit.
+
+stagged and staging area  -
+when we run a command git add filename , then this file will be included in staging area.
+we have a big module to develop. we have finished some part which is working as expected, then we will move that changes to stagging area and then work next part.
+
+changes which are included in stagging are are taken for next commit. 
+
+snapshot  - 
+it refers to a specific point in time in the history of git Repository.
+when we create a commin in git, we are essentially taking a snapshot(checkpoint) of the current state of the repository at that moment.
+each commit in a git repository is a unique snapshot that refers to the specific version of that project.
+snapshot captures all the changes(who/when/where/what) we have made to the file in our repository.
+each commit creates a unique snapshot/checkpoint and a new version.
+we can come back to this point anytime.
+each commit has a unique identifier(hash - a long string of characters).
+
+head  - 
+head is the reference to the most recent commit that we have made.
+head is the pointer which points to the new commit of that branch.
+when we create a new commit git updates the head to point to the new commit.
+
+branch  -
+branch is a separate line of development that allows us to work on different parts pf project. which does not affect the other branches of our repo.
+***
+when we create a new branch it doesnot create a copy of all the files and folder in our repo. It creates a new pointer to a specific commit in our repo.
+
+tag   -
+a tag is a label that is assigned to a specific commit in a repo.
+it is used to mark imp points inthe proect history.
+they are simply a way to mark a specific commit and make it easy to refer to it in the future.
+
+git tag tagname (ex  git tag drag_drop_working)
+
+by above command we have added tag to that recent commit with name drag_drop_working. 
+after that we created some new files and did some modification and then committed. but this disturbed the project on that branch. now we want to go back to that working commit where we had given a tag. to do that 
+
+git checkout drag_drop_working
+
+rollback  -
+we have made multiple commits suppose commit-1,commit-2,commit-3..............commit-10.
+now we are getting some problems after commit-8. I want to go back to commot-8. going back to that working commit is called rollback.rollback will remove all the commits after the commit-8.
+simply going back to any commit of that branch on the repo is roll back.
+
+upstream  repository-
+when we clone a repo from github, the github repo is considered the upstream repo for our local repo.
+
+upstream  branch-
+if we create a branch in our local repo and push it to upstream repo,it will be referred as an upstream branch to our local branch in that local repo.
+
+conflict merge  -
+multiple developres are working on diff branches. some times they do changes on the same lines of that file and push there code to upstream branch. at the time of nerging these two branches git cant determine which changes to keep, and it stops and mark the conflict there.
+
+-----------------------------------------------------------------------------------------------
+basic steps 
+
+initialize the repo     git init
+add files to stage      git add . (git add file1.txt file2.ts file3.html)
+review changes          git status
+commit                  git commit
+check history           git log
+rollback                git reset --hard
+push                    git push
+
+configuration
+git config -l
+
+git config --global user.name "hari"
+git config --global user.email "hari@prasad.com"
+git config --global color.ui auto
+
+check git version -
+git --version
+
+---------------------------------------------------------------
+i have 2 files product_1 and product_2.
+i have modified both the files and run the commant git add .
+now all the files are moved to stagging.
+i realised that i have to do some more changes in product_1 file and then after move it to stage. but for now i have completed product_2. 
+so to remove product_1 from stagging we have to run command any one from below
+
+1. git reset product_1.ts
+2. git rm --cached product_1.ts
+objects
+on running this command git will not track that file.
+all the content of that file will be there. no data loss.
+------------------------------------------------------------------------
+git diff
+git diff filename.ext
+
+this command is used to see the modification.
+whether that file is tracked/untracked/staged/unstaged we can view the difference on that
+----------------------------------------------------------------------
+git diff --staged
+
+we have added some files to stagging area.
+we want to see the changes which are stagged  but not committed.
+------------------------------------------------------------------------
+commit
+git commit -m "commit message"
+
+
+
+
+
+
+
+
