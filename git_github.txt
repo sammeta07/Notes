@@ -101,12 +101,7 @@ we have made multiple commits suppose commit-1,commit-2,commit-3..............co
 now we are getting some problems after commit-8. I want to go back to commot-8. going back to that working commit is called rollback.rollback will remove all the commits after the commit-8.
 simply going back to any commit of that branch on the repo is roll back.
 
-rollback last commit -
-git revert HEAD
 
-rollback a specific commit -
-git reflog
-git revert b998e02
 -------------------------------------------------------------------------------------------------
 
 upstream  repository-
