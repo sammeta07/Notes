@@ -158,6 +158,11 @@ we want to see the changes which are stagged  but not committed.
 commit
 git commit -m "commit message"
 
+git log
+commit 5f1b48b9162e8da5ef694b2d332adbd2d813a2c1 (HEAD -> master)    output
+
+
+
 
 
 
