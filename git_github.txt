@@ -160,8 +160,29 @@ git commit -m "commit message"
 
 git log
 commit 5f1b48b9162e8da5ef694b2d332adbd2d813a2c1 (HEAD -> master)    output
+head will always point to new commit of tht branch
 
-heaf will always point to new commit of tht branch
+git log -p
+this will gives all the details info 
+
+git reflog
+shows all the commit
+
+
+git commit -a -m "commit message"
+using this command we can add and commit together at same time.
+
+
+to view specific commit - 
+git log
+copy the hash string of the commit which i want to see log then,
+git show a97d735d159e7d7b8ebeae8813a91199d40ec806
+
+remove - to remove any file we write
+git rm product_2.ts
+
+rename - to rename a file name
+git mv oldfilename.ext newfilename.ext
 
 
 
