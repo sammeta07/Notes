@@ -216,8 +216,12 @@ git branch feature_1
 switch to newely created branch
 git checkout feature_1
 
+push new branch to remote repo.
+git push origin feature_1
+
 create a new branch and checkout to that branch at a same time
 git checkout -b feature_2
+
 
 detete specific branch - (you should not be in the same branch which you are going to delete. so checkout to other branch)
 git branch -d feature_2 (if you have merged this branch to other branch)
@@ -256,6 +260,28 @@ git stash drop - drops all the satsh
 
 
 --------------------------------------------------------------------------------------------------
+remote repo - 
+git remote add origin https://github.com/sammeta07/git.git
+git push --set-upstream origin master || git push -u origin master
+git remote remove branch_name
+
+push a new branch to remote repo
+git push origin branch_name
+
+push a tag to remote repo
+1st create a tag -  git tag tag_name 5f32756
+
+git push origin tag_name
+git push origin --tags   (push all the tags to remote repo at a time)
+
+git pull 
+
+git ignore -
+is ised to ignore specific files from unintensionally staging or comitting.
+create file .gitignore.
+----------------------------------------------------------------------------------
+merge -
+git merge branch_name
 
 
 
