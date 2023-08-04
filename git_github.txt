@@ -227,6 +227,12 @@ detete specific branch - (you should not be in the same branch which you are goi
 git branch -d feature_2 (if you have merged this branch to other branch)
 git branch -D feature_2 (if you have not merged this branch to other branch)
 
+this will delete branch from your local repo only. to delete branch from remote you need to delete from github repo or run a command.
+
+git push origin -d feature_2
+
+
+
 
 ------------------------------------------------------------------------------------
 rebase - 
@@ -237,8 +243,9 @@ then run command
 
 git rebase feature_1
 
-this will not replace feature_2 with feature_1.
-this will add all the work of feature one to feature_2.
+merge will create a new commit by merging all the commits of new_branch to last commit of current branch.
+rebase will add all the commits of new_branch on the main branch after the last commit.
+
 
 
 
@@ -282,6 +289,13 @@ create file .gitignore.
 ----------------------------------------------------------------------------------
 merge -
 git merge branch_name
+
+-----------------------------
+cherry-pick - 
+if i want to apply any specific commit of one branch to another branch then i will do cherry pick.
+git merge will merge will merge all the commits of one branch to current branch.
+
+git cherry-pick aab5172290c2285604a3bd6873084ddc88c004ea
 
 
 
