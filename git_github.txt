@@ -1,34 +1,46 @@
 
 Git -
-git is a free open source distributed version control system.
-designed to handle projects.
-git is a tool.
 
+Git is a free, open-source distributed version control system designed to handle our projects.
+
+-------------------------------------------------------------------------------------------------------------------
 
 Github -
-is webhosting service provider.
-here we put or source code of any project. add collaborators, create branch and may more.
-github is a web based hosting service which uses git tool.
+
+Github is a web hosting service provider; here we put the source code of any project, add collaborators, create branches, and do many more operations.
+Github is a web-based hosting service that uses the Git tool.
+
+-------------------------------------------------------------------------------------------------------------------
 
 Repository -
-collections of files and directories that are managed by git.
-contains all the informantion about project,its history(who/when/where).
-It allows multiple collaborators.
+
+A repository is a collection of files and directories that are managed by Git.
+The repository contains all the information about the project. ie history(who/when/where).
+It allows multiple collaborators and coordinators.
+
+-------------------------------------------------------------------------------------------------------------------
 
 Local Repository -
-is the Repository that exists in our own computer.
-contains files, branches, commits and other informantion related to our project.
-we can use git commands to manage it.
+
+The local repository is the Repository that exists on our own computer.
+It contains files, branches, commits, and other information related to our project.
+We can use Git commands to manage it.
+
+-------------------------------------------------------------------------------------------------------------------
 
 Remote Repository -
-is a copy of Repository that exists on a server.(github/gitlab/bitbucket).
-allows you to share code to other developres and collaborate on same project.
 
-.git directory  -
-when run *git int* command on any local directory, it becomes local Repository and .git hidded directory is created.
-GIT uses this directory to store all the metadata(commit history, branches, tags, config settings) for that Repository.
+A remote repository is a copy of a local repository that exists on a server (Github, GitLab, or Bitbucket).
+Remote Repository allows you to share code with other developers to collaborate on our projects.
 
-files and folders in .git directory-
+-------------------------------------------------------------------------------------------------------------------
+
+.Git directory  -
+
+When you run the *Git int* command on any local directory, it becomes a local repository, and a.Git hidden directory is created. GIT uses this directory to store all the metadata (commit history, branches, tags, and configuration settings) for that Repository.
+
+files and folders in the.git directory -
+
   head            - 
   objects         -folder
   refs            -folder
@@ -43,259 +55,381 @@ files and folders in .git directory-
   COMMIT_EDITMSG  -
   ORIG_HEAD       -
 
-untracked files -
-when we create a new file in our git Repository, git doesnot automatically start trackingit.
-git is unaware of this file, so git doesnot monitor this file for any changes.
-if you accidently detete this untracked file ,it will be lost forever.
+-------------------------------------------------------------------------------------------------------------------
 
-tracked file  -
-when you initially create a git Repository, no files are tracked by default.
-you need to tell git which files you want to track.
-command - git add filename.extension 
+Untracked files -
 
-unstaged  -
-when we do any changes in tracked file, git is aware of those changes but they are considered to be unstagged untill we expictly tell git to include them in the staging area.
-when we rename a file or do some changes in that file this will not be in staging area by default. we have to run git add command to move that file in staging.
-command- git status will show you that the file has been modified,but it will be listed as unstagged.
-unstagged shanges were not included in next commit.
+When we create a new file in our Git Repository, Git does not automatically start tracking it.
+Git is unaware of this newly created file, so Git does not monitor this file for any changes.
+If you accidentally delete this untracked file, it will be lost forever.
 
-stagged and staging area  -
-when we run a command git add filename , then this file will be included in staging area.
-we have a big module to develop. we have finished some part which is working as expected, then we will move that changes to stagging area and then work next part.
+-------------------------------------------------------------------------------------------------------------------
 
-changes which are included in stagging are are taken for next commit. 
+Tracked file -
 
-snapshot  - 
-it refers to a specific point in time in the history of git Repository.
-when we create a commin in git, we are essentially taking a snapshot(checkpoint) of the current state of the repository at that moment.
-each commit in a git repository is a unique snapshot that refers to the specific version of that project.
-snapshot captures all the changes(who/when/where/what) we have made to the file in our repository.
-each commit creates a unique snapshot/checkpoint and a new version.
-we can come back to this point anytime.
-each commit has a unique identifier(hash - a long string of characters).
+When you initially create a Git Repository, no files are tracked by default, you need to tell Git which files you want to track.
 
-head  - 
-head is the reference to the most recent commit that we have made.
-head is the pointer which points to the new commit of that branch.
-when we create a new commit git updates the head to point to the new commit.
+command - Git add filename.extension 
 
-branch  -
-branch is a separate line of development that allows us to work on different parts pf project. which does not affect the other branches of our repo.
-***
-when we create a new branch it doesnot create a copy of all the files and folder in our repo. It creates a new pointer to a specific commit in our repo.
----------------------------------------------------------------------------------------
-tag   -
-a tag is a label that is assigned to a specific commit in a repo.
-it is used to mark imp points in the proejt history.
-they are simply a way to mark a specific commit and make it easy to refer to it in the future.
+-------------------------------------------------------------------------------------------------------------------
 
-git tag tagname (ex  git tag drag_drop_working)
+Unstaged -
 
-by above command we have added tag to that recent commit with name drag_drop_working. 
-after that we created some new files and did some modification and then committed. but this disturbed the project on that branch. now we want to go back to that working commit where we had given a tag. to do that 
+When we make any changes to a tracked file, Git is aware of those changes, but they are considered unstagged until we explicitly tell Git to include them in the staging area. We have to run the Git add command to move that file into the staging area.
+Untagged changes were not included in the next commit.
 
-git checkout drag_drop_working
+-------------------------------------------------------------------------------------------------------------------
 
-adding a tag to specific commit
-git tag v0.1 605ec110e07e39a8825e64a71423166831140857
+Stagged -
 
-git tag --list 
-will  give you the list of all the tags
+When we run the command Git add filename.ext or git add, The changes will be included in the staging area.
+Changes that are included in stagging are taken into account for the next commit.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Snapshot - 
+
+Snapshot refers to a specific point in time in the history of the Git Repository.
+When we create a commit in Git, we are essentially taking a snapshot (checkpoint) of the current state of the repository at that moment. Each commit in a Git repository is a unique snapshot that refers to a specific version of that project. Snapshot captures all the information (who, when, where, and what) added to the file in our repository. Each commit creates a unique snapshot or checkpoint and a new version. You can come back to this point anytime. Each commit has a unique identifier (a hash, a long string of characters).
+
+-------------------------------------------------------------------------------------------------------------------
+
+HEAD -
+
+Head refers to the most recent commit that we have made.
+Head is the pointer that points to the newest commit in that branch.
+When we create a new commit, Git updates the HEAD to point to the new commit.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Branch -
+
+A branch is a separate line of development that allows developers to work on different parts of a project.
+When we create a new branch, it does not create a copy of all the files and folders in our repo. It creates a new pointer to a specific commit in our repo.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Tag -
+
+A tag is a label that is assigned to a specific commit in a repo and is used to mark important points in the project's history. Tags are simply a way to mark a specific commit and make it easy to refer to it in the future.
+
+Git tag tagname (ex. git tag drag_drop_working)
+
+The above command will add a tag to that recent commit with the name drag_drop_working. 
+After that, we created some new files, did some modifications, and then committed them, but this commit disturbed the project on that branch, and we want to go back to that working commit where we had given a tag.
+Use the below command to go back to some tags.
+.............................................................
+|   git checkout drag_drop_working                          |
+.............................................................
+
+Adding a tag to specific commit
+.............................................................
+|   git tag v0.1 605ec110e07e39a8825e64a71423166831140857   |
+.............................................................
+
+get the list of all the tags
+.............................................................
+|   git tag --list                                          |
+.............................................................
 
 delete a tag - 
-git tag -d drag_drop_working
+.............................................................
+|   git tag -d drag_drop_working                            |
+.............................................................
 
--------------------------------------------------------------------------------------------------
-rollback  -
-we have made multiple commits suppose commit-1,commit-2,commit-3..............commit-10.
-now we are getting some problems after commit-8. I want to go back to commot-8. going back to that working commit is called rollback.rollback will remove all the commits after the commit-8.
-simply going back to any commit of that branch on the repo is roll back.
 
-rollback last commit -
-git revert HEAD
+-------------------------------------------------------------------------------------------------------------------
 
-rollback a specific commit -
-git reflog
-git revert b998e02
--------------------------------------------------------------------------------------------------
+Rollback -
+Supposing we have made multiple commits, let's say commit-1, commit-2, commit-3, ... commit-10,
+Now we are getting some problems after commit-8, and I want to go back to commit-8.
+Going back to that working commit is called a rollback.
+Rollback will remove all the commits after commit 8.
 
-upstream  repository-
-when we clone a repo from github, the github repo is considered the upstream repo for our local repo.
+Rollback last commit -
+.............................................................
+|   git revert HEAD                                         |
+.............................................................
 
-upstream  branch-
-if we create a branch in our local repo and push it to upstream repo,it will be referred as an upstream branch to our local branch in that local repo.
+Rollback a specific commit -
+.............................................................
+|  git revert b998e02                                       |
+.............................................................
 
-conflict merge  -
-multiple developres are working on diff branches. some times they do changes on the same lines of that file and push there code to upstream branch. at the time of nerging these two branches git cant determine which changes to keep, and it stops and mark the conflict there.
+-------------------------------------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------------
-basic steps 
+Upstream  repository-
+When we clone a repo from GitHub, the GitHub repo is considered the upstream repo for our local repo.
 
-initialize the repo     git init
-add files to stage      git add . (git add file1.txt file2.ts file3.html)
+Upstream  branch-
+When we create a branch in our local repo and push it to a remote repo, it will be referred to as an upstream branch to our local branch in that local repo.
+
+Create a new branch - 
+.............................................................
+|  git branch branch_name                                   |
+.............................................................
+
+Pushing new branch to remote repo - 
+.............................................................
+|  git push origin  branch_name                             |
+.............................................................
+
+-------------------------------------------------------------------------------------------------------------------
+
+Conflict merge -
+When multiple developers are working on different branches, sometimes they make changes to the same lines of that file and push their code to the upstream branch, but at the time of merging these two branches, Git can't determine which changes to keep, so it stops and marks the conflict there.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Basic steps -
+
+initialize the repo     git init 
+add files to stage      git add . (Git add file1.txt file2.ts file3.html)
 review changes          git status
-commit                  git commit
-check history           git log
+commit                  git commit -m 'commit_message'
+check history           git log  or git reflog
 rollback                git reset --hard
-push                    git push
+push                    git push or git push origin branch_name
 
-configuration
-git config -l
+-------------------------------------------------------------------------------------------------------------------
 
-git config --global user.name "hari"
-git config --global user.email "hari@prasad.com"
-git config --global color.ui auto
+Configuration - 
+.............................................................
+|  git config -l                                            |
+.............................................................
 
-check git version -
-git --version
+.............................................................
+|  git config --global user.name "hari"                     |
+.............................................................
+.............................................................
+|  git config --global user.email "hari@prasad.com"         |
+.............................................................
+.............................................................
+|  git config --global color.ui auto                        |
+.............................................................
 
----------------------------------------------------------------
-i have 2 files product_1 and product_2.
-i have modified both the files and run the commant git add .
-now all the files are moved to stagging.
-i realised that i have to do some more changes in product_1 file and then after move it to stage. but for now i have completed product_2. 
-so to remove product_1 from stagging we have to run command any one from below
+Check Git version -
+.............................................................
+|  git --version                                            |
+.............................................................
 
-1. git reset product_1.ts
-2. git reset HEAD product_1.ts
-3. git rm --cached product_1.ts
-4. git reset -p
+-------------------------------------------------------------------------------------------------------------------
 
-on running this command git will not track that file.
-all the content of that file will be there. no data loss.
-------------------------------------------------------------------------
-git diff
-git diff filename.ext
+I have two files, product_1 and product_2.
+I have modified both files and run the command git add.
+Now all the files have been moved to the stagging area.
+I realised that I have to make some more changes in the product_1 file and then move it to stage, but for now I have completed product_2 and want to remove product_1 from stagging. To achieve this, we have to run any command from below.
+.............................................................
+|  git reset product_1.ts                                   |
+.............................................................
+.............................................................
+|  git reset HEAD product_1.ts                              |
+.............................................................
+.............................................................
+|  git rm --cached product_1.ts                             |
+.............................................................
+.............................................................
+|  git reset -p                                             |
+.............................................................
 
-this command is used to see the modification.
-whether that file is tracked/untracked/staged/unstaged we can view the difference on that
-----------------------------------------------------------------------
-git diff --staged
+On running this command, Git will not track that file.
+All the content of that file will be there. There will be no data loss.
 
-we have added some files to stagging area.
-we want to see the changes which are stagged  but not committed.
-------------------------------------------------------------------------
-commit
-git commit -m "commit message"
+-------------------------------------------------------------------------------------------------------------------
 
-git log
-commit 5f1b48b9162e8da5ef694b2d332adbd2d813a2c1 (HEAD -> master)    output
-head will always point to new commit of tht branch
+Git diff - 
+.............................................................
+|  git diff filename.ext                                    |
+.............................................................
 
-git log -p
-this will gives all the details info 
+This command is used to see the modification.
+Whether that file is tracked, untracked, staged, or unstaged, we can view the difference made on that.
 
-git reflog
-shows all the commit
+-------------------------------------------------------------------------------------------------------------------
 
+.............................................................
+|  git diff --staged                                        |
+.............................................................
+We want to see the changes that have been stagged but not committed.
 
-git commit -a -m "commit message"
-using this command we can add and commit together at same time.
+-------------------------------------------------------------------------------------------------------------------
 
+Commit - 
+.............................................................
+|  git commit -m "commit message"                           |
+.............................................................
 
-to view specific commit - 
-git log
-copy the hash string of the commit which i want to see log then,
-git show a97d735d159e7d7b8ebeae8813a91199d40ec806
+View specific commit - 
+.............................................................
+|  git show a97d735d159e7d7b8ebeae8813a91199d40ec806        |
+.............................................................
 
-remove - to remove any file we write
-git rm product_2.ts
+Remove any file - 
+.............................................................
+|  git rm product_2.ts                                      |
+.............................................................
 
-rename - to rename a file name
-git mv oldfilename.ext newfilename.ext
-----------------------------------------------------
+Rename a file -
+.............................................................
+|  git mv oldfilename.ext newfilename.ext                   |
+.............................................................
 
-branch  -
+-------------------------------------------------------------------------------------------------------------------
 
-git branch
-current working branch will be shown in green color with * prefix.
+Branch  -
 
-creatw a new branch
-git branch feature_1
+.............................................................
+|  git branch                                               |
+.............................................................
+The current working branch will be shown in green with the * prefix.
 
-switch to newely created branch
-git checkout feature_1
+Create a branch - 
+.............................................................
+|  git branch branch_name                                   |
+.............................................................
 
-push new branch to remote repo.
-git push origin feature_1
+Switch to branch - 
+.............................................................
+|  git checkout branch_name                                 |
+.............................................................
 
-create a new branch and checkout to that branch at a same time
-git checkout -b feature_2
+push new branch to remote repo - 
+.............................................................
+|  git push origin branch_name                              |
+.............................................................
 
-
-detete specific branch - (you should not be in the same branch which you are going to delete. so checkout to other branch)
-git branch -d feature_2 (if you have merged this branch to other branch)
-git branch -D feature_2 (if you have not merged this branch to other branch)
-
-this will delete branch from your local repo only. to delete branch from remote you need to delete from github repo or run a command.
-
-git push origin -d feature_2
-
-
-
-
-------------------------------------------------------------------------------------
-rebase - 
-when we want to transfer complete work of one branch to another branch we use rebase.
-i have 2 branches feature_1 and feature_2. both the branches are having different files and folder.
-to transfer all the work of featute_1 to feature_2, 1st we have to go to feature_ branch.
-then run command
-
-git rebase feature_1
-
-merge will create a new commit by merging all the commits of new_branch to last commit of current branch.
-rebase will add all the commits of new_branch on the main branch after the last commit.
-
-
-
-
-
--------------------------------------------------------------------------------------
-stash
-i a, working on branch A . Did some changes on branch A. now I have to work on branch B. 
-I will try to chwckout to branch B but i got error either commit or stash changes before checkout to B, because there are some changes in branch A. I dont want to commit those changes. so here stash is used to save the changes in working directory. and now i can checkout to any oyher branch.
-
-git stash
-
-when i come back to branch A, i see my changes are not there which i did before stash. to get all my changes i need to run a command.
-
-git stash pop
-
-git stash list - list all the stash
-git stash drop - drops all the satsh
+Create a new branch and checkout to that branch at the same time.
+.............................................................
+|  git checkout -b branch_name                              |
+.............................................................
 
 
+detete specific branch - 
+You should not be in the same branch that you are going to delete; first checkout to another branch.
 
---------------------------------------------------------------------------------------------------
-remote repo - 
-git remote add origin https://github.com/sammeta07/git.git
-git push --set-upstream origin master || git push -u origin master
-git remote remove branch_name
+When you have merged this branch with another branch - 
+.............................................................
+|  git branch -d feature_2                                  |
+.............................................................
 
-push a new branch to remote repo
-git push origin branch_name
+When you have not merged this branch with another branch
+.............................................................
+|  git branch -D feature_2                              |
+.............................................................
 
-push a tag to remote repo
-1st create a tag -  git tag tag_name 5f32756
+This will delete branches from your local repo only; to delete branches from a remote repo, you need to delete them from the github repo or run a command.
+.............................................................
+|  git push origin -d feature_2                             |
+.............................................................
 
-git push origin tag_name
-git push origin --tags   (push all the tags to remote repo at a time)
+-------------------------------------------------------------------------------------------------------------------
 
-git pull 
+Rebase - 
 
-git ignore -
-is ised to ignore specific files from unintensionally staging or comitting.
-create file .gitignore.
-----------------------------------------------------------------------------------
-merge -
-git merge branch_name
+When we want to transfer the complete work of one branch to another branch, we use rebase.
+I have two branches, feature_1 and feature_2, both of which have different files and folders.
+To transfer all the work of featute_1 to featute_2, we first have to go to the feature_ branch.
+then run the command
 
------------------------------
+.............................................................
+|  git rebase feature_1                                     |
+.............................................................
+
+merge will create a new commit by merging all the commits of new_branch with the last commit of the current branch.
+Rebase will add all the commits of new_branch to the main branch after the last commit.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Stash - 
+
+Suppose I am working on branch A, and I have made some changes to branch A. Now I have to work on branch B.
+When I try to checkout to branch B, I will get an error either to commit changes or stash changes before checkout to B because there are some changes in branch A.
+I don't want to commit those changes, so here stash is used to save the changes in the working directory, and I can checkout to any other branch after stash.
+
+.............................................................
+|  git stash                                                |
+.............................................................
+
+When I come back to branch A, I will see my changes are not there, which I did before stashing. To get all my changes, I need to run a command.
+
+.............................................................
+|  git stash pop                                            |
+.............................................................
+
+List all the stash - 
+.............................................................
+|  git stash list                                           |
+.............................................................
+
+Drop all the stash -
+.............................................................
+|  git stash drop                                           |
+.............................................................
+-------------------------------------------------------------------------------------------------------------------
+
+Remote repo - 
+
+................................................................
+|  git remote add origin https://github.com/sammeta07/Git.Git  |
+................................................................
+
+.............................................................
+|  git push --set-upstream origin master                    |
+.............................................................
+.............................................................
+|  git push  push -u origin master                          |
+.............................................................
+
+.............................................................
+|  git remote remove branch_name                            |
+.............................................................
+
+
+
+Push a new branch to remote repo -
+.............................................................
+|  git push origin branch_name                              |
+.............................................................
+
+Push a tag to remote repo -
+1st create a tag -  
+.............................................................
+|  git tag tag_name 5f32756                                 |
+.............................................................
+.............................................................
+|  git push origin tag_name                                 |
+.............................................................
+
+Push all the tags to remote repo at a time - 
+.............................................................
+|  git push origin --tags                                   |
+.............................................................
+
+-------------------------------------------------------------------------------------------------------------------
+
+Git ignore -
+
+A .gitignore file is used to ignore specific files from unintentionally staging or comitting.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Merge -
+
+Git merge will merge all the commits of one branch into the current branch.
+.............................................................
+|  git merge branch_name                                    |
+.............................................................
+
+-------------------------------------------------------------------------------------------------------------------
+
 cherry-pick - 
-if i want to apply any specific commit of one branch to another branch then i will do cherry pick.
-git merge will merge will merge all the commits of one branch to current branch.
 
-git cherry-pick aab5172290c2285604a3bd6873084ddc88c004ea
+When I want to apply any specific commit from one branch to another branch, I will cherry pick.
+.............................................................
+|  git cherry-pick aab5172290c2285604a3bd6873084ddc88c004ea |
+.............................................................
+
+-------------------------------------------------------------------------------------------------------------------
 
 
 
