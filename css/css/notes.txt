@@ -1,4 +1,0 @@
-position properties are used to move any element in any place without giving margin.
-Absolute - element leaves its position.It will not take any space in that view.
-
-relative
