@@ -1,0 +1,172 @@
+Why Flexbox - 
+
+a lot of flexibility
+arrange items
+spacing
+alignment
+order
+bootstrap 4 is built on the top of flex layout 
+
+___________________________________________________________________________________________________________________
+
+Terminology - 
+
+Flex Container -
+Parent container 
+
+Flex Items - 
+Children elements
+
+Example -
+
+<div class="container">
+  <div>item 1</div>
+  <div>item 1</div>
+  <div>item 1</div>
+</div>
+___________________________________________________________________________________________________________________
+Flexbox axis - 
+Main axis  - horizontal 
+Cross axis - verticle
+
+___________________________________________________________________________________________________________________
+Flex container properties - 
+
+display - 
+mandatory to work with flex containers.
+creates either block level or inline level flex container.
+
+display: flex;
+display: inline-flex;
+___________________________________________________________________________________________________________________
+
+flex-direction - 
+defines the direction in which the flex items are placed in the container.
+by default the main axis flows from feft to right.
+
+flex direction has four values - 
+
+flex-direction: row;
+flex-direction: row-reverse;
+flex-direction: column;
+flex-direction: column-reverse;
+___________________________________________________________________________________________________________________
+
+flex-wrap - 
+used to control the wrapping of items in a container.
+by default all the flex items in a container try to fit in a single line, if there is not enough space the items simply overflow. If i reduce the browser width items begin to shrink and then no longer in view.
+we can fix this by using flex-wrap property.
+
+flex-wrap contains three values -
+
+flex-wrap: nowrap;    default value. no change in UI
+flex-wrap: wrap;
+flex-wrap: wrap-reverse;
+___________________________________________________________________________________________________________________
+
+flex-flow - 
+combination of flex-direction and flex-wrap.
+flex-flow: <flex-direction><flex-wrap>
+
+flex-direction: row;
+flex-wrap: nowrap;
+
+we can use a single flex-flow property in place of above two properties.
+we can give any combination of flex-direction and flex-wrap.
+
+flex-flow: row nowrap; (4*3 = 12 combinations)
+___________________________________________________________________________________________________________________
+
+justify-content -
+
+defines the alignment of the items along the main axis by default.
+
+justify-content: flex-start; default
+justify-content: flex-end;
+justify-content: center;
+justify-content: space-around;
+justify-content: space-between;
+justify-content: space-evenly;
+
+If we set flex-direction to column. The items will be aligned vertically.
+___________________________________________________________________________________________________________________
+
+align-items - 
+
+suppose we have 5 items in a row.
+..............................................
+| item 1 | item 2 | item 3 | item 4 | item 5 |    --> row 
+..............................................
+
+this entire row will be aligned along cross axis.
+
+align-items can have four values
+
+align-items: stretch; default
+align-items: flex-start;
+align-items: flex-end;
+align-items: baseline;
+___________________________________________________________________________________________________________________
+
+align-content - 
+defines the alignment of the items along the cross axis.
+this works only when there are multile rows of flex items in the container.
+
+suppose we have some items which dosent fit in a container and they will go out of the parent div.
+we use flex-wrap peoperty to wrap then in that container. now we will have multile rows, and align content can be applied on these multile rows only.
+
+..............................................
+| item 1 | item 2 | item 3 | item 4 | item 5 |    --> row 1
+..............................................
+..............................................
+| item 1 | item 2 | item 3 | item 4 | item 5 |    --> row 2
+..............................................
+..............................................
+| item 1 | item 2 | item 3 | item 4 | item 5 |    --> row 3
+..............................................
+..............................................
+| item 1 | item 2 | item 3 | item 4 | item 5 |    --> row 4
+..............................................
+
+align-content can have seven values - 
+
+align-content: stretch;     default
+align-content: flex-start; 
+align-content: flex-end; 
+align-content: center; 
+align-content: space-between; 
+align-content: space-around; 
+___________________________________________________________________________________________________________________
+
+
+
+___________________________________________________________________________________________________________________
+
+
+
+___________________________________________________________________________________________________________________
+
+
+
+
+___________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________
+
+
+___________________________________________________________________________________________________________________
+
+
+___________________________________________________________________________________________________________________
+
+
+
+___________________________________________________________________________________________________________________
+
+
+
+___________________________________________________________________________________________________________________
+
+
+
+
+___________________________________________________________________________________________________________________
