@@ -138,6 +138,114 @@ align-content: space-between;
 align-content: space-around; 
 ___________________________________________________________________________________________________________________
 
+Flex item properties - 
+
+order - 
+controls the order in which the item appears in the flex container.
+bydefault all the items are arranged in some order.
+
+ <div class="container">
+  <div class="flex-item item-1">item 1</div>      1st position
+  <div class="flex-item item-2">item 2</div>      2nd position
+  <div class="flex-item item-3">item 3</div>      3rd position
+  <div class="flex-item item-4">item 4</div>      4th position
+  <div class="flex-item item-5">item 5</div>      5th position
+</div>
+..............................................
+| item 1 | item 2 | item 3 | item 4 | item 5 |    
+..............................................
+|order 0 |order 0 |order 0 |order 0 |order 0 |
+..............................................
+
+by default all the items are of order 0. 
+when we specifically give order property to item 3.
+
+.item-3{
+  order: 1
+}
+by doing this item 3 will be pushed to end because all items bydefault have an order of 0. 
+1 is greater than 0.
+..............................................
+| item 1 | item 2 | item 4 | item 5 | item 3 |    
+..............................................
+|order 0 |order 0 |order 0 |order 0 |order 1 |
+..............................................
+___________________________________________________________________________________________________________________
+
+flex-grow - 
+defines the ability for a flex item to grow if necessary.
+
+items only take up the space which is required to for the content. There can me alot of extra space with in the container.
+
+......................................................................................................
+| item 1 | item 2 | item 3 | item 4 | item 5 |  <-------------------EXTRA SPACE---------------------->
+......................................................................................................
+
+sometimes we dont want those extraspace there, instead of this we want any item/items to take up this exyra space if available.
+bydefault all items have have the flex grow value of 0, because of this they dont take up the extra space.
+
+.item-3{
+  flex-grow: 1
+}
+.item-1{
+  flex-grow: 3
+}
+
+by applying above css, item 3 will take the 25% of the extra space and item 1 will take the 75% of the extra space.
+
+___________________________________________________________________________________________________________________
+
+flex-shrink - 
+defines the ability for a flex item to shrink if necessary.
+the default value of flex shrink is 1. when we decrease the width of screen all the flex items together shrink.
+these items shrink up to a limit and then after these items overflow.
+by setting shrink value to 0 we can prevent shrinking.
+flex-shrink : 0;
+
+If i apply shrink value to item 2
+.item-2{
+  flex-shrink: 3
+}
+when we decrease width if screen item 2 will shrink 3times more.
+
+___________________________________________________________________________________________________________________
+
+flex-basis -
+this specifies the initial size of a flex item.
+bydefault flex-basis has a value of auto which sets the initial width based on the items content.In our case items width is dependent on the text content .
+
+___________________________________________________________________________________________________________________
+
+flex - 
+a shorthand property for <flex-grow> <lex-shrink> & <flex-basis>
+
+.item{
+  flex-grow:2;
+  flex:shrink:4;
+  flex-basis:200px
+}
+
+.item{
+  flex:2 4 200px;
+}
+___________________________________________________________________________________________________________________
+
+align-self - 
+allows alignment of individual flex items.
+
+default value of align-self is auto.
+align-self:auto;
+which means the item inherits the property from parent container's align-items value.
+if in parent container align-items value is flex-end, then the individual items inside that container will also be set to flex end.
+
+align-self:flex-start;
+align-self:flex-end;
+align-self:center;
+align-self:stretch;
+align-self:auto;    -->default value
+
+auto will inherit the value of align-items value from parent container.
+
 
 
 ___________________________________________________________________________________________________________________
