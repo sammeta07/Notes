@@ -11,11 +11,9 @@ ________________________________________________________________________________
 
 Terminology - 
 
-Flex Container -
-Parent container 
+Flex Container - Parent container 
 
-Flex Items - 
-Children elements
+Flex Items - Children elements
 
 Example -
 
@@ -26,8 +24,8 @@ Example -
 </div>
 ___________________________________________________________________________________________________________________
 Flexbox axis - 
-Main axis  - horizontal 
-Cross axis - verticle
+Main axis  - horizontal  X-axis
+Cross axis - verticle    Y-axis
 
 ___________________________________________________________________________________________________________________
 Flex container properties - 
@@ -245,36 +243,22 @@ align-self:stretch;
 align-self:auto;    -->default value
 
 auto will inherit the value of align-items value from parent container.
-
-
-
 ___________________________________________________________________________________________________________________
 
-
-
+display           flex
+flex-direction    row, row-reverse, column, column-reverse
+flex-wrap         nowrap, wrap, wrap-reverse
+flex-flow         <flex-direction><flex-wrap>  
+justify-content   flex-start flex-end center space-around space-evenly space-between
+align-items       flex-start flex-end stretch baseline
+align-content     flex-start flex-end stretch center space-around space-between 
 ___________________________________________________________________________________________________________________
 
-
-
-
-___________________________________________________________________________________________________________________
-___________________________________________________________________________________________________________________
-
-
-___________________________________________________________________________________________________________________
-
-
-___________________________________________________________________________________________________________________
-
-
-
-___________________________________________________________________________________________________________________
-
-
-
-___________________________________________________________________________________________________________________
-
-
-
+order             number, 
+flex-grow         number, decimal values
+flex-shrink       number
+flex-basis        % , auto, px, em, rem, 
+flex              <flex-grow><flex-shrink><flex-basis>
+align-self        auto flex-start flex-end center stretch
 
 ___________________________________________________________________________________________________________________
