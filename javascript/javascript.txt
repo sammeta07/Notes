@@ -1,0 +1,549 @@
+-----------------------------------------------------------------------------------------------------
+  JavaScript is a programming language initially designed to interact with elements of web pages. In web browsers, JavaScript consists of three main parts:
+
+    1 . ECMAScript provides the core functionality.
+    2 . The Document Object Model (DOM) provides interfaces for interacting with elements on web pages.
+    3 . The Browser Object Model (BOM) provides the browser API for interacting with the web browser.
+
+  After HTML and CSS have been downloaded, the JavaScript engine in the web browser executes the JavaScript code. The JavaScript code then modifies the HTML and CSS to update the user interface dynamically.
+
+  In the beginning, JavaScript engines were implemented as interpreters.
+  modern JavaScript engines are typically implemented as just-in-time compilers that compile JavaScript code to bytecode for improved performance.
+
+  JavaScript can run on both web browsers and servers.
+
+  JavaScript was created by a Netscape developer named Brendan Eich.
+  First, its name was Mocha -> LiveScript -> JavaScript
+
+  Netscape released its web browser product Netscape Navigator 2 with JavaScript 1.0
+  Netscape released its web browser product Netscape Navigator 3 with JavaScript 1.1
+
+  Microsoft introduced a web browser product called the Internet Explorer 3 (IE 3), which competed with Netscape. IE came with its own JavaScript implementation called JScript.
+
+  Hence, two different JavaScript versions were in the market:
+    JavaScript in Netscape Navigator
+    JScript in Internet Explorer
+
+  JavaScript had no standards that governed its syntax and features. And the community decided that it was time to standardize the language.
+
+  In 1997, JavaScript 1.1 was submitted to the European Computer Manufacturers Association (ECMA) as a proposal. Technical Committee #39 (TC39) was assigned to standardize the language to make it a general-purpose, cross-platform, and vendor-neutral scripting language.
+
+  TC39 came up with ECMA-262, a standard for defining a new scripting language named ECMAScript.
+
+  After that, the International Organization for Standardization and International Electrotechnical Commissions (ISO/IEC) adopted ECMAScript (ISO/IEC-16262).
+
+  ************************** HTML DOM *******************
+
+    The W3C DOM standard is separated into 3 different parts:
+      Core DOM - standard model for all document types
+      XML DOM  - standard model for XML documents
+      HTML DOM - standard model for HTML documents
+
+        HTML DOM defines The HTML elements as objects. 
+        HTML DOM defines The properties ,methods , events of all HTML elements
+
+      When a web page is loaded, the browser creates a Document Object Model of the page.
+      With this DOM - 
+        - Js can edit / remove / add  the HTML elements , attributes 
+        - Js can change all the CSS styles in the page
+            document.getElementById(id).style.property = new style
+            document.getElementById("p2").style.color = "blue";
+        - Js can react to all existing HTML events in the page
+            <h2 onclick="changeText()"id='11' >Click on this text!</h2>
+            function changeText() {
+              document.getElementById('11').innerHTML = "Ooopsssssssssss!";
+            }
+        - Js can create new HTML events in the page
+            <label id="myBtn">Try it</label>
+            <p id="demo"></p>
+            <script>
+              document.getElementById("myBtn").onclick = displayDate;
+              function displayDate() {
+                document.getElementById("demo").innerHTML = Date();
+              }
+            </script>
+
+      JS all events 
+        https://www.w3schools.com/jsref/dom_obj_event.asp
+
+      JavaScript addEventListener() - 
+        <button id="myBtn">Try it</button>
+        <script>
+          document.getElementById("myBtn").addEventListener("click", function() {
+            alert("Hello World!");
+          });
+        </script>
+
+        Add Many Event Handlers to the Same Element
+          element.addEventListener("click", myFunction);
+          element.addEventListener("click", mySecondFunction);
+  
+        You can add events of different types to the same element
+          element.addEventListener("mouseover", myFunction);
+          element.addEventListener("click", mySecondFunction);
+          element.addEventListener("mouseout", myThirdFunction);
+
+      JavaScript removeEventListener() -
+          <button onclick="removeHandler()" id="myBtn">Remove</button>
+          function removeHandler() {
+            document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+          }
+
+      HTML DOM methods - are actions you can perform (on HTML Elements).
+        Finding HTML Elements
+          const element = document.getElementById("intro");
+          const element = document.getElementsByTagName("p");
+          const element = document.getElementsByClassName("intro");
+          const element = document.querySelectorAll("p.intro");
+          const element = document.forms["frm1"];
+
+                          document.createElement(element)
+                          document.removeChild(element)
+                          document.appendChild(element)
+                          document.replaceChild(new, old)
+                          document.write(text)
+
+      HTML DOM properties - are values (of HTML Elements) that you can set or change.
+
+        Property - 
+          element.innerHTML =  new html content
+          element.attribute = new value
+          document.getElementById("myImage").src = "landscape.jpg";
+
+        Method
+          element.setAttribute(attribute, value)
+          <input id = "change"  type = "text" value = "javaTpoint"/>  
+          document.getElementById("change").setAttribute("type", "button");  
+
+        JavaScript Form Validation - 
+          <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            Name: <input type="text" name="fname">
+            <input type="submit" value="Submit">
+          </form>
+          function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+              alert("Name must be filled out");
+              return false;
+            }
+          }
+
+      All attributes are accessible by using the following methods:
+        elem.hasAttribute(name)        – checks for existence.
+        elem.getAttribute(name)        – gets the value.
+        elem.setAttribute(name, value) – sets the value.
+        elem.removeAttribute(name)     – removes the attribute. 
+    
+      DOM Nodes
+        everything in an HTML document is a node.
+        entire document is a document node
+        every HTML element is an element node
+        text inside HTML elements are text nodes
+        Every HTML attribute is an attribute node (deprecated)
+        All comments are comment nodes
+
+        the top node is called the root
+        Every node has exactly one parent, except the root 
+        A node can have a number of children
+        Siblings (brothers or sisters) are nodes with the same parent
+
+        Navigating Between Nodes
+          parentNode
+            myTitle = document.getElementById("demo").parentNode.nodeValue;
+          childNodes[nodenumber]
+            myTitle = document.getElementById("demo").childNodes[0].nodeValue;
+          firstChild
+            myTitle = document.getElementById("demo").firstChild.nodeValue;
+          lastChild
+            myTitle = document.getElementById("demo").lastChild.nodeValue;
+          nextSibling
+            myTitle = document.getElementById("demo").nextSibling.nodeValue;
+          previousSibling
+            myTitle = document.getElementById("demo").previousSibling.nodeValue;
+
+  ***************  
+
+  ************************** HTML DOM *******************
+
+  js window - 
+    It represents the browser's window.
+    All global JavaScript objects, functions, and variables automatically become members of the window object.
+    Global variables are properties of the window object.
+    Global functions are methods of the window object.
+    Even the document object (of the HTML DOM) is a property of the window object - 
+      window.document.getElementById("header");
+      document.getElementById("header");    
+
+    Window Size
+      window.innerHeight - the inner height of the browser window (in pixels) excluding toolbars and scrollbars.
+      window.innerWidth  - the inner width of the browser window (in pixels) excluding toolbars and scrollbars.
+
+    Other Window Methods
+      window.open()     - open a new window
+      window.close()    - close the current window
+      window.moveTo()   - move the current window
+      window.resizeTo() - resize the current window
+
+  js screen - 
+    Window Screen - The window.screen object can be written without the window prefix.
+      screen.width
+      screen.height
+      screen.availWidth
+      screen.availHeight
+      screen.colorDepth
+      screen.pixelDepth
+
+  js location - 
+    Window Location - The window.location object can be written without the window prefix.
+      window.location.href     returns the href (URL) of the current page
+      window.location.hostname returns the domain name of the web host
+      window.location.pathname returns the path and filename of the current page
+      window.location.protocol returns the web protocol used (http: or https:)
+      window.location.port     
+      window.location.assign() loads a new document
+
+  js history - 
+    Window History - The window.history object contains the browsers history.
+      history.back()
+      history.forward()
+  
+  js navigator - 
+    Window Navigator - The window.navigator object can be written without the window prefix.
+      navigator.cookieEnabled
+      navigator.appName         deprecated
+      navigator.appCodeName     deprecated
+      navigator.product         deprecated
+      navigator.appVersion
+      navigator.userAgent
+      navigator.language
+      navigator.onLine
+      navigator.javaEnabled();
+      navigator.platform
+
+  js popup alert  
+    Alert Box - JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.
+    The window.alert() method can be written without the window prefix.
+      alert("I am an alert box!");
+      confirm("sometext");
+      prompt("sometext","defaultText");
+
+  js timings
+    Timing Events - 
+      setTimeout(myFunction, 3000)
+      clearTimeout()
+      setInterval(myTimer, 1000);
+      clearInterval()
+
+  js cookies - 
+    JavaScript can create, read, and delete cookies with the document.cookie property.
+    When a web server has sent a web page to a browser, the connection is shut down after response sent, and the server forgets everything about the user.
+
+    Cookies were invented to remember information about the user
+    When a user visits a web page, his/her name can be stored in a cookie.
+    When a browser requests a web page from a server, cookies belonging to the page are added to the request. This way the server gets the necessary data to "remember" information about users.
+
+    By default, the cookie is deleted when the browser is closed, we can give a expiry date.
+      document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+
+    By default, the cookie belongs to the current page, With a path parameter, you can tell the browser what path the cookie belongs to - 
+      document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+
+
+
+
+
+
+
+
+
+
+
+
+  ***************  
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+  let items = [1, 2, 3];
+
+  for(let i = 0; i < items.length; i++) {
+      console.log(items[i]);
+  }
+
+  for(let item of items) {
+      console.log(item);
+  }
+
+-----------------------------------------------------------------------------------------------------
+  
+  There are two ways to use the <script> element in an HTML page - 
+
+    1 . Embed JavaScript code directly into the HTML page.
+          <script>
+          alert('Hello, World!');
+          </script>
+    2 . Reference an external JavaScript code file.
+          <script src="js/app.js"></script>
+
+  The async and defer attributes :- 
+    To change how the browser load and execute JavaScript files.
+    These attributes take effect only on the external script files.
+
+    1 . async - 
+
+          The async attribute instructs the web browser to execute the JavaScript file asynchronously.
+          The async attribute does not guarantee the script files to execute in the order that they appear. 
+          For example:
+            <script async src="service.js"></script>
+            <script async src="app.js"></script>
+
+          The app.js file might execute before the service.js file. Therefore, you must ensure that there is no dependency between them.
+
+    2 . defer - 
+
+          The defer attribute requests the web browser to execute the script file after the HTML document has been parsed.
+          For example:
+            <script defer src="defer-script.js"></script>
+
+          Even though we place the <script> element in the <head> section, the script will wait for the browser to receive the closing tag <html> to start executing
+
+-----------------------------------------------------------------------------------------------------
+  
+  Identifers -
+
+    Identifers are names that you choose for variables, functions, classes, etc.
+    Do not use the reserved keywords and reserved words for identifers.
+
+-----------------------------------------------------------------------------------------------------
+ 
+  variable - 
+
+    var message;
+
+    By default, the message variable has a special value undefined.
+    Variable names cannot use the reserved words.
+    variable names must begin with a letter, an underscore (_) or a dollar sign ($).
+    Variable names are case-sensitive. 
+
+    variable names use camelcase like message, yourAge, and myName
+    we can use the var , let , const  keyword to declare a variable
+
+  Undefined vs. undeclared variables
+
+    let message;
+    console.log(message);     // undefined
+
+    console.log(counter);
+    ReferenceError: counter is not defined
+
+  Constants
+    A constant holds a value that doesn’t change.
+    When defining a constant, you need to initialize it with a value.
+    
+    const workday = 5;
+
+    Once defining a constant, you cannot change its value.
+
+-----------------------------------------------------------------------------------------------------
+
+  data types - 
+    primitive data types:
+      null
+        has only one value null.
+
+        let obj = null;
+        console.log(typeof obj);          // object
+        console.log(null == undefined);   // true
+
+      undefined
+        has only one value undefined.
+
+        let counter;
+        console.log(counter);             // undefined
+        console.log(typeof counter);      // undefined
+
+      boolean
+        The boolean type has two literal values: true and false in lowercase.
+        let inProgress = true;
+        let completed = false;
+
+      number
+        number type to represent both integer and floating-point numbers.
+        let price= 12.5; 
+        let num = 100;
+
+        make the numeric literals more readable.
+        The numeric separator fixes this readability issue as follows:
+        Use underscores (_) as the numeric separators
+
+        const budget = 1_000_000_000;
+
+      string
+        let message = 'I\'m also a valid string';           // use \ to escape the single quote (').
+
+        Converting values to string
+          1 . String(n);
+          2 . ” + n
+          3 . n.toString()
+
+        ** toString() method doesn’t work for undefined and null
+
+        let k = null;
+        console.log(String(k));           // null
+        console.log(k.toString());        // Uncaught TypeError:
+                                            Cannot read properties of null (reading 'toString')
+                                            
+      symbol – available from ES2015
+        JavaScript added a primitive type in ES6.
+        The Symbol function creates a new unique value every time you call it.
+        let s1 = Symbol();
+        console.log(Symbol() == Symbol()); // false
+
+      bigint – available from ES2020
+        The bigint type represents the whole numbers that are larger than 2^53 – 1.
+        To form a bigint literal number, you append the letter n at the end of the number.
+
+        let pageView = 9007199254740991n;
+        console.log(typeof(pageView)); // 'bigint'
+
+      NaN - It is a special numeric value that indicates an invalid number.
+        
+        console.log('a'/2);             // NaN;
+        console.log(NaN/2);             // NaN
+        console.log(NaN == NaN);        // false
+
+
+    complex data type 
+      object
+        an object is a collection of properties, where each property is defined as a key-value pair.
+        A reference value allows you to add, change, or delete properties at any time.
+
+        let emptyObject = {};
+        let person = {
+          firstName: 'John',
+          lastName: 'Doe'
+        };
+
+        To access a object’s property, you can use
+          The dot notation (.)
+            person.firstName
+          The array-like notation ([])
+            person['firstName']
+
+      Adding a new property to an object  - 
+        objectName.propertyName = value
+
+      Deleting a property of an object    - 
+        delete objectName.propertyName
+
+      Checking if a property exists       - 
+        propertyName in objectName
+
+-----------------------------------------------------------------------------------------------------
+  
+  JavaScript Primitive vs. Reference Values - 
+
+    When you declare variables, the JavaScript engine allocates the memory for them on two memory locations: stack and heap.
+
+    Static data is the data whose size is fixed at compile time
+
+    Primitive values (null, undefined, boolean, number, string, symbol, and BigInt)
+
+    Because static data has a size that does not change, the JavaScript engine allocates a fixed amount of memory space to the static data and store it on the stack.
+
+    heap - 
+    let dist = 'durg';
+    let pin = 490025;
+
+    let person = {
+      name: 'John',
+      age: 25,
+    };
+
+    the JavaScript engine allocates the memory on stack to these three variables dist , pin & person.
+
+    The JavaScript engine creates a new object on the heap memory. Also, it links the person variable on the stack memory to the object on the heap memory.
+
+    When you assign a reference value from one variable to another, the JavaScript engine creates a reference so that both variables refer to the same object on the heap memory. This means that if you change one variable, it’ll affect the other.
+
+-----------------------------------------------------------------------------------------------------
+
+  arrays - 
+
+    an array is an ordered list of values.
+    an array can hold values of mixed types.
+    the size of an array is dynamic.
+
+  Creating JavaScript arrays -
+    1 . Array constructor 
+        let scores = new Array();
+        let scores = Array();        // JavaScript allows you to omit the new operator.
+    2 . array literal notation
+        let emptyArray = [];
+        let colors = ['red', 'green', 'blue'];
+
+    Check if a value is an array
+      let seas = ['Black Sea', 'Caribbean Sea', 'North Sea', 'Baltic Sea'];
+      console.log(Array.isArray(seas)); // true
+    
+-----------------------------------------------------------------------------------------------------
+  
+  JAVASCRIPT OPERATORS - 
+    https://www.javascripttutorial.net/javascript-unary-operators/
+
+-----------------------------------------------------------------------------------------------------
+
+  CONTROL FLOW -
+    if
+    if else
+    if else if
+    Ternary Operator (:?)
+    switch case
+    while
+    do while
+    for
+    break
+      
+      Use the break statement to terminate a loop including for, while, and do...while prematurely.
+      When used in a nested loop, the break statement terminates the enclosing loop. To terminate the nested loop, you use a label statement.
+
+      outer: for (let i = 1; i <= 3; i++) {
+                for (let j = 1; j <= 3; j++) {
+                  if (i + j == 4) {
+                    break outer;
+                  }
+                  console.log(i, j);
+                }
+              }
+
+    continue
+      Use the JavaScript continue statement to skip the current iteration of a loop and continue the next one
+
+      for (let i = 0; i < 10; i++) {
+        if (i % 2 === 0) {
+          continue;
+        }
+        console.log(i);     // 1 3 5 7 9
+      }
+
+      outer: for (let i = 1; i < 4; i++) {
+        for (let j = 1; j < 4; j++) {
+          if (i + j == 3) {
+            continue outer
+          };
+          console.log(i, j);
+        }
+      }
+
+    Comma Operator
+
+-----------------------------------------------------------------------------------------------------
+  
+  JAVASCRIPT FUNCTIONS
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------

@@ -1,0 +1,76 @@
+strongly typed programming language.
+improved version of js
+improved readability
+
+new features - 
+type annotation
+generics
+
+typescript is all about typesafety.
+
+avoid bugs in development.
+increase development speed.
+additional features -
+    function add(num1,num2){
+      return nam1+num2;            //js wont show this typo error on development time 
+    }
+
+    this function can accept any type of valu, but actually only numbers should be passed.
+
+    user={
+      fName:'hari',
+      lName:'prasad'
+    }
+    
+    when I acces object user js will not show the properties inside this object.
+
+custom type - I can create my own type by using type keyword.  any custom type created by keyword type must be unique.
+
+type User={
+  fName:string,
+  lName:string
+  age?:number           --> i have an option to create optional properties in ts.
+}
+
+person1:User={
+  fName:'hari',
+  lName:'prasad'
+}
+
+function add(num1:number,num2:number):number
+we can define a return type of function also in ts.
+
+union 
+  id : number | string;
+
+Interface - we ca have multiple interfaces with same name. Ts will combine all these same name interfaces to single interface.
+
+narrowing-
+suppose we have a functiom which accept one argument, whuch is of type number or string.
+function abc(num : number | string){}
+
+we can not apply .toString() method in this argument it will give error on development. so to fix this we add a if condition. This hack is called narrowing
+
+function abc(num : number | string){
+  if(tyoeof num ==string){
+    return num.toString()
+  }
+}
+----------------------------------------------------------------------------------------------------
+Generices - 
+
+I our application data will always change based on requirements we de create interfaces.
+generics helps in code reusability.
+----------------------------------------------------------------------------------------------------
+
+Anil saddhu
+-----------
+ts is a typed usperset of javascript that compiles to javascript.
+object oriented.
+easy code management.
+IDE support
+
+----------------------------------------------------------------------------------------------------
+
+
+
