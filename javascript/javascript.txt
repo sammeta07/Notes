@@ -248,32 +248,20 @@
     By default, the cookie belongs to the current page, With a path parameter, you can tell the browser what path the cookie belongs to - 
       document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
 
-
-
-
-
-
-
-
-
-
-
-
   ***************  
 
-
-
 -----------------------------------------------------------------------------------------------------
+  for loop - 
 
-  let items = [1, 2, 3];
+    let items = [1, 2, 3];
 
-  for(let i = 0; i < items.length; i++) {
-      console.log(items[i]);
-  }
+    for(let i = 0; i < items.length; i++) {
+        console.log(items[i]);
+    }
 
-  for(let item of items) {
-      console.log(item);
-  }
+    for(let item of items) {
+        console.log(item);
+    }
 
 -----------------------------------------------------------------------------------------------------
   
@@ -329,7 +317,7 @@
     variable names use camelcase like message, yourAge, and myName
     we can use the var , let , const  keyword to declare a variable
 
-  Undefined vs. undeclared variables
+  Undefined vs undeclared variables
 
     let message;
     console.log(message);     // undefined
@@ -442,7 +430,7 @@
 
 -----------------------------------------------------------------------------------------------------
   
-  JavaScript Primitive vs. Reference Values - 
+  JavaScript Primitive vs Reference Values - 
 
     When you declare variables, the JavaScript engine allocates the memory for them on two memory locations: stack and heap.
 
@@ -503,7 +491,7 @@
     while
     do while
     for
-    break
+    break - 
       
       Use the break statement to terminate a loop including for, while, and do...while prematurely.
       When used in a nested loop, the break statement terminates the enclosing loop. To terminate the nested loop, you use a label statement.
@@ -517,7 +505,8 @@
                 }
               }
 
-    continue
+    continue - 
+
       Use the JavaScript continue statement to skip the current iteration of a loop and continue the next one
 
       for (let i = 0; i < 10; i++) {
@@ -536,14 +525,321 @@
         }
       }
 
-    Comma Operator
+    Comma Operator - https://www.javascripttutorial.net/javascript-comma-operator/
 
 -----------------------------------------------------------------------------------------------------
   
   JAVASCRIPT FUNCTIONS
+    When declaring a function, you specify the parameters. However, when calling a function, you pass the arguments that are corresponding to the parameters.
+      function functionName(parameters) {} 
+      functionName(arguments)
+
+    The arguments object - 
+      Inside a function, you can access an object called arguments
+      The arguments object behaves like an array though it is not an instance of the Array type.
+      The value of the arguments object inside the function is the number of actual arguments that you pass to the function
+        function add(x, y = 1, z = 2) {
+            console.log( arguments.length );
+        }
+        add(10);          // 1
+        add(10, 20);      // 2
+        add(10, 20, 30);  // 3
+
+    Function hoisting - 
+      In JavaScript, you can use a function before declaring
+
+    Storing functions in variables
+      function add(a, b) {
+          return a + b;
+      }
+      let sum = add;  //here we are giving reference of function add() to variable sum.
+
+      let result = add(10, 20);
+      let result = sum(10,20);
+
+    Passing a function to another function - 
+      function add(a, b) {
+          return a + b;
+      }
+      let sum = add;
+      function average(a, b, fn) {
+          return fn(a, b) / 2;
+      }
+      let result = average(10, 20, sum);
+      console.log(result);
+
+    Returning functions from functions -
+      function compareBy(propertyName) {
+        return function (a, b) {  
+          //code
+        };
+      }
+
+    Anonymous Functions -
+      An anonymous function is a function without a name.
+      let show = function() {
+        console.log('Anonymous function');
+      };
+      show();
+    
+    anonymous functions as arguments - 
+      setTimeout(function() {
+        console.log('Execute later after 1 second')
+      }, 1000);
+
+    Immediately invoked function execution - 
+      (function() {
+        console.log('IIFE');
+      })();
+
+    pass arguments to Immediately invoked function -
+      let person = {
+        firstName: 'John',
+        lastName: 'Doe'
+      };
+
+      (function () {
+        console.log(person.firstName + ' ' + person.lastName);
+      })(person);
+
+    Arrow functions - 
+      ES6 introduced arrow function expressions that provide a shorthand for declaring functions
+        
+        let show = function () {
+          console.log('Anonymous function');
+        };
+        let show = () => console.log('Anonymous function');
+
+        let add = function (a, b) {
+          return a + b;
+        };   
+        let add = (a, b) => a + b;        
+
+    Pass-by-value of primitives values -
+      the changes made to the arguments are not reflected outside of the function.
+
+      function square(x) {
+          x = x * x;
+          return x;
+      }
+
+      let y = 10;
+      let result = square(y);
+
+      console.log(result); // 100 
+      console.log(y);      // 10 -- no change
+
+    Pass-by-value of reference values - 
+      the changes of variables that you pass into the function will be reflected outside the function
+      let person = {
+        name: 'John',
+        age: 25,
+      };
+
+      function increaseAge(obj) {
+        obj.age += 1;
+      }
+
+      increaseAge(person);
+      console.log(person);  //{ name: 'John', age: 26 };
+
+    JavaScript Recursive Function -
+      A recursive function is a function that calls itself.
+      A recursive function always has a condition to stop calling itself.
+      If the function name is set to null somewhere in the code, the recursive function will stop working.
+
+    JavaScript Default Parameters - 
+      if you don’t pass the arguments into the function, its parameters will have the default values of undefined.
+
+        function say(message) {
+            console.log(message);
+        }
+        say();                           // undefined
+      
+      The default value of the message paramater in the say() function is 'Hi'.
+        function say(message='Hi') {
+            console.log(message);
+        }
+
+        say();                            // 'Hi'
+        say('Hello')                      // 'Hello'
+
+      we passed the undefined into the say() function, hence the message parameter also took the default value 'Hi'
+        function say(message='Hi') {
+            console.log(message);
+        }
+        say(undefined);                   // 'Hi'
 
 -----------------------------------------------------------------------------------------------------
 
+Javascript Object Methods - 
+  An object is a collection of key/value pairs or properties.
+    .............................. function expression ...............................
+    let person = {
+        firstName: 'John',
+        lastName: 'Doe'
+    };
+    person.greet = function () {
+        console.log('Hello!');
+    }
+    person.greet();   //  Hello!
+    ............................. define a function and assign ................................
+    let person = {
+        firstName: 'John',
+        lastName: 'Doe'
+    };
+    function greet() {
+        console.log('Hello, World!');
+    }
+    person.greet = greet;
+    person.greet();   //  Hello, World!
+    ............................... shorthand ..............................
+    let person = {
+        firstName: 'John',
+        lastName: 'Doe',
+        greet: function () {
+            console.log('Hello, World!');
+        }
+    };
+    ............................... ES6 concise method syntax ..............................
+    let person = {
+        firstName: 'John',
+        lastName: 'Doe',
+        greet() {
+            console.log('Hello, World!');
+        }
+    };
+    person.greet();
+
+  The this value -
+    Inside a method, the this value references the object.
+    let person = {
+        firstName: 'John',
+        lastName: 'Doe',
+        greet: function () {
+            console.log('Hello, World!');
+        },
+        getFullName: function () {
+            return this.firstName + ' ' + this.lastName;
+        }
+    };
+    console.log(person.getFullName());    //  'John Doe'
+
+  JavaScript Constructor Function - 
+    a constructor function is a regular function with the following convention:
+      The name of a constructor function starts with a capital letter like Person, Document, etc
+      A constructor function should be called only with the new operator.
+
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        let person = new Person('John','Doe');
+
+      the constructor function Person allows you to create multiple similar objects
+        let person1 = new Person('Jane','Doe')
+        let person2 = new Person('James','Smith')
+
+    Adding methods to JavaScript constructor functions - 
+      To add a method to an object created via the constructor function, you can use the this keyword
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.getFullName = function () {
+                return this.firstName + " " + this.lastName;
+            };
+        }
+        let person = new Person("John", "Doe");
+        console.log(person.getFullName());    // John Doe
+
+        The problem with the constructor function is that when you create multiple instances of the Person, the this.getFullName() is duplicated in every instance.
+
+        To resolve this, you can use the prototype so that all instances of a custom type can share the same methods.
+
+        you can call a constructor function like a regular function without using the new keyword like this:
+
+        let person = Person('John','Doe');
+
+        In this case, the Person just executes like a regular function.
+        If you attempt to access the method and property, you’ll get an error.
+
+        To prevent a constructor function to be invoked without the new keyword, ES6 introduced the new.target property.
+
+        If a constructor function is called with the new keyword, the new.target returns a reference of the function. Otherwise, it returns undefined.
+
+
+        function Person(firstName, lastName) {
+            console.log(new.target);
+        }
+        let person = Person("John", "Doe");       // undefined
+        let person = new Person("John", "Doe");   // [Function: Person]
+
+  JavaScript Prototype - 
+    objects can inherit features from one another via prototypes. 
+    Every object has its own property called prototype.
+    Because a prototype itself is also another object, the prototype has its own prototype.
+    This creates a something called prototype chain.
+    The prototype chain ends when a prototype has null for its own prototype.
+
+      let person = {}
+      console.log(person);    // {}
+
+      when we expand this we will see 
+        [[Prototype]]:Object
+      when we expand this we see 
+          constructor: ƒ Object()
+          hasOwnProperty: ƒ hasOwnProperty()
+          .
+          .
+          __proto__: Object
+          .
+          .
+      when we expand __proto__ we sell all of above again, and finally at any point we get 
+        __proto__: null
+
+      When you access a property of an object, if the object has that property, it’ll return the property value.
+      if you access a property that doesn’t exist in an object, the JavaScript engine will search in the prototype of the object.
+      If the JavaScript engine cannot find the property in the object’s prototype, it’ll search in the prototype’s prototype until either it finds the property or reaches the end of the prototype chain.
+
+    Defining methods in the JavaScript prototype object - 
+      Person.prototype.greet = function() {
+          return "Hi, I'm " + this.name + "!";
+      }
+
+  JavaScript has the built-in Object() function. The typeof operator returns 'function' if you pass the Object function to it.
+  Do use the Object.getPrototypeOf() method instead of __proto__.
+
+  prototypal inheritance - 
+    In prototypal inheritance, an object “inherits” properties from another object via the prototype linkage.
+
+  JavaScript Prototypal Inheritance - 
+    es5 way - 
+      let person = {
+          name: "John Doe",
+          greet: function () {
+              return "Hi, I'm " + this.name;
+          }
+      };
+
+      let teacher = {
+          teach: function (subject) {
+              return "I can teach " + subject;
+          }
+      };
+
+      If you want the teacher object to access all methods and properties of the person object, you can set the prototype of teacher object to the person object like this:
+        
+        teacher.__proto__ = person;  //  never use the __proto__ property in the production code
+
+        let student = Object.create(person, {
+            name : { value: 'John Doe' } ,
+            study: { value: function(subject) {
+                return "I can learn " + subject;
+            }}
+        });
+
+  Demystifying the JavaScript this Keyword - 
+    In JavaScript, you can use the this keyword in the global and function contexts. Moreover, the behavior of the  this keyword changes between strict and non-strict modes.     
 -----------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------
