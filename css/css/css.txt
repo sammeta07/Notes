@@ -5,7 +5,8 @@ Used to apply styles to a html document.
 A CSS comprises of style rules.
 A style rule is made of three parts:
 
-Selector: A selector is an HTML tag. <h1> or <table> etc.
+Selector: A selector is an HTML tag. <h1> or 
+          <table> etc.
 Property: color, border, etc.
 Value   : red or #F1F1F1 
 
@@ -20,8 +21,9 @@ The Universal Selectors -
 ...........................................
 
 The Descendant Selectors -
-Suppose you want to apply a style rule to a particular element only when it lies inside a
-particular element.
+Suppose you want to apply a style rule to a 
+particular element only when it lies inside 
+a particular element.
 ...........................................
 |   ul em{  color: #000000; }             |
 ...........................................
@@ -31,12 +33,15 @@ The Class Selectors -
 |   .student{  color: #000000; }          |
 ...........................................
 
-This rule renders the content in black for only <h1> elements with class attribute set to black.
+This rule renders the content in black for 
+only <h1> elements with class attribute set 
+to black.
 ...........................................
 |   h1.black{  color: #000000; }          |
 ...........................................
 
-You can apply more than one class selectors to a given element. 
+You can apply more than one class selectors 
+to a given element. 
 ...........................................
 |   <p class="center bold">               |
 ...........................................
@@ -46,7 +51,9 @@ The ID Selectors -
 |   #student{  color: #000000; }          |
 ...........................................
 
-This rule renders the content in black for only <h1> elements with id attribute set to black.
+This rule renders the content in black for 
+only <h1> elements with id attribute set to 
+black.
 ...........................................
 |   h1#black{  color: #000000; }          |
 ...........................................
@@ -55,9 +62,11 @@ The Child Selectors -
 ...........................................
 |   body > p{  color: #000000; }          |
 ...........................................
-This rule will render all the paragraphs in black if they are a direct child of the <body>
-element. Other paragraphs put inside other elements like <div> or <td> would not have any
-effect of this rule.
+This rule will render all the paragraphs in 
+black if they are a direct child of the 
+<body> element. Other paragraphs put inside
+other elements like <div> or <td> would not
+have any effect of this rule.
 
 The Attribute Selectors -
 .............................................
@@ -65,7 +74,8 @@ The Attribute Selectors -
 .............................................
 
 -------------------------------------------------------------------------------------------------------------------
-ways to associate styles with your HTML document - 
+ways to associate styles with your HTML 
+document - 
 
 Embedded CSS -
 <head>
@@ -89,16 +99,18 @@ Imported CSS -
   @import "mystyle.css";
 </head>
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 LINKS
 :link, :visited, :hover, :active
 
 caption 
 <table>
-  <caption>Separate Border Example with border-spacing</caption>
+  <caption>
+    Separate Border Example with border-spacing
+  </caption>
 </table>
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 PSEUDO CLASSES - 
 
@@ -111,7 +123,7 @@ p:first-child { text-indent: 25px; }
 :lang(en) { quotes: '"' '"' "'" "'"; }
 :lang(fr) { quotes: "<<" ">>" "<" ">"; }
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 PSEUDO ELEMENTS - 
 
@@ -125,28 +137,45 @@ p:before { content: url(/images/bullet.gif) }
 
 p:after { content: url(/images/bullet.gif) }
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 Block-level Elements -
 
-A block-level element always starts on a new line and takes up the full width available
-<div> , <h1> - <h6> , <p> , <form> , <header> , <footer> , <section>
+A block-level element always starts on a new 
+line and takes up the full width available
+<div> , <h1> - <h6> , <p> , <form> , <header> ,
+<footer> , <section>
 
 Inline Elements
 
-An inline element does not start on a new line and only takes up as much width as necessary
+An inline element does not start on a new 
+line and only takes up as much width as 
+necessary
 <span> , <a> , <img>
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 position - 
 
 relative - 
 
-element takes its position from the place where it was on the view.
-it will not allow other elements to occupy its space.
+element takes its position from the place 
+where it was on the view. it will not allow 
+other elements to occupy its space.
 
 absolute -
 
-element takes it position from 0 0. i.e left top corner.
+element takes it position from 0 0. i.e left 
+top corner.
 
-if this element is a child and its parent has set to position static then also child element will take its position from 0 0, i.e left top corner.
+if this element is a child and its parent has
+set to position static then also child 
+element will take its position from 0 0, 
+i.e left top corner.
 
-if this element is a child and its parent has set to any position other than static then  child element will take its position from its parents starting position. Child element will check for all its parents whether any one of its parents are set to any position other than static, if if finds then sets its position from parent. If not the sets position from 0 0.
+if this element is a child and its parent has
+set to any position other than static then  
+child element will take its position from its
+parents starting position. Child element will 
+check for all its parents whether any one of 
+its parents are set to any position other 
+than static, if if finds then sets its 
+position from parent. If not the sets 
+position from 0 0.

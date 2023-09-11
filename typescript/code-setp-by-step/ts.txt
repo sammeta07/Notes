@@ -14,7 +14,8 @@ tuple -
 let x :string[] | number [] | boolean[] = [1,'d',true]
 
 above code is invalid
-we cannot define types like this and assign different types of values in that arrat.
+we cannot define types like this and assign 
+different types of values in that arrat.
 
 here tuple can be used to achieve this.
 
@@ -25,7 +26,7 @@ let x : [number,string,boolean,boolean?] = [1,'d',true]
 literal -
  let data :string | number = 'hello'
 
-let data :'abc' | 100 = 100 ;           --- thus is literal
+let data :'abc' | 100 = 100 ;           --- this is literal
 
 ------------------------------------------------------------------------------------------------
 

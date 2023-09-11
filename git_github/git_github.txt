@@ -1,43 +1,64 @@
 
 Git -
 
-Git is a free, open-source distributed version control system designed to handle our projects.
+Git is a free, open-source distributed 
+version control system designed to handle 
+our projects.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Github -
 
-Github is a web hosting service provider; here we put the source code of any project, add collaborators, create branches, and do many more operations.
-Github is a web-based hosting service that uses the Git tool.
+Github is a web hosting service provider; 
+here we put the source code of any project, 
+add collaborators, create branches, and do 
+many more operations.
+Github is a web-based hosting service that 
+uses the Git tool.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Repository -
 
-A repository is a collection of files and directories that are managed by Git.
-The repository contains all the information about the project. ie history(who/when/where).
-It allows multiple collaborators and coordinators.
+A repository is a collection of files and 
+directories that are managed by Git.
+The repository contains all the information 
+about the project. ie history(who/when/where).
+It allows multiple collaborators and 
+coordinators.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Local Repository -
 
-The local repository is the Repository that exists on our own computer.
-It contains files, branches, commits, and other information related to our project.
+The local repository is the Repository that 
+exists on our own computer.
+It contains files, branches, commits, and 
+other information related to our project.
 We can use Git commands to manage it.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Remote Repository -
 
-A remote repository is a copy of a local repository that exists on a server (Github, GitLab, or Bitbucket).
-Remote Repository allows you to share code with other developers to collaborate on our projects.
+A remote repository is a copy of a local 
+repository that exists on a server 
+(Github, GitLab, or Bitbucket).
+Remote Repository allows you to share code 
+with other developers to collaborate on our 
+projects.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 .Git directory  -
 
-When you run the *Git int* command on any local directory, it becomes a local repository, and a.Git hidden directory is created. GIT uses this directory to store all the metadata (commit history, branches, tags, and configuration settings) for that Repository.
+When you run the *Git int* command on any 
+local directory, it becomes a local 
+repository, and a.Git hidden directory is 
+created. GIT uses this directory to store 
+all the metadata (commit history, branches, 
+tags, and configuration settings) for that 
+Repository.
 
 files and folders in the.git directory -
 
@@ -55,68 +76,115 @@ files and folders in the.git directory -
   COMMIT_EDITMSG  -
   ORIG_HEAD       -
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Untracked files -
 
-When we create a new file in our Git Repository, Git does not automatically start tracking it.
-Git is unaware of this newly created file, so Git does not monitor this file for any changes.
-If you accidentally delete this untracked file, it will be lost forever.
+When we create a new file in our Git 
+Repository, Git does not automatically start 
+tracking it.
+Git is unaware of this newly created file, 
+so Git does not monitor this file for any 
+changes.
+If you accidentally delete this untracked 
+file, it will be lost forever.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Tracked file -
 
-When you initially create a Git Repository, no files are tracked by default, you need to tell Git which files you want to track.
+When you initially create a Git Repository, 
+no files are tracked by default, you need to 
+tell Git which files you want to track.
 
 command - Git add filename.extension 
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Unstaged -
 
-When we make any changes to a tracked file, Git is aware of those changes, but they are considered unstagged until we explicitly tell Git to include them in the staging area. We have to run the Git add command to move that file into the staging area.
-Untagged changes were not included in the next commit.
+When we make any changes to a tracked file, 
+Git is aware of those changes, but they are 
+considered unstagged until we explicitly tell 
+Git to include them in the staging area. We 
+have to run the Git add command to move that 
+file into the staging area.
+Untagged changes were not included in the 
+next commit.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Stagged -
 
-When we run the command Git add filename.ext or git add, The changes will be included in the staging area.
-Changes that are included in stagging are taken into account for the next commit.
+When we run the command Git add filename.ext 
+or git add, The changes will be included in 
+the staging area.
+Changes that are included in stagging are 
+taken into account for the next commit.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Snapshot - 
 
-Snapshot refers to a specific point in time in the history of the Git Repository.
-When we create a commit in Git, we are essentially taking a snapshot (checkpoint) of the current state of the repository at that moment. Each commit in a Git repository is a unique snapshot that refers to a specific version of that project. Snapshot captures all the information (who, when, where, and what) added to the file in our repository. Each commit creates a unique snapshot or checkpoint and a new version. You can come back to this point anytime. Each commit has a unique identifier (a hash, a long string of characters).
+Snapshot refers to a specific point in time 
+in the history of the Git Repository.
+When we create a commit in Git, we are 
+essentially taking a snapshot (checkpoint) 
+of the current state of the repository at 
+that moment. Each commit in a Git repository 
+is a unique snapshot that refers to a 
+specific version of that project. Snapshot 
+captures all the information 
+(who, when, where, and what) added to the 
+file in our repository. Each commit creates 
+a unique snapshot or checkpoint and a new 
+version. You can come back to this point 
+anytime. Each commit has a unique identifier 
+(a hash, a long string of characters).
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 HEAD -
 
-Head refers to the most recent commit that we have made.
-Head is the pointer that points to the newest commit in that branch.
-When we create a new commit, Git updates the HEAD to point to the new commit.
+Head refers to the most recent commit that we 
+have made.
+Head is the pointer that points to the newest
+commit in that branch.
+When we create a new commit, Git updates the
+HEAD to point to the new commit.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Branch -
 
-A branch is a separate line of development that allows developers to work on different parts of a project.
-When we create a new branch, it does not create a copy of all the files and folders in our repo. It creates a new pointer to a specific commit in our repo.
+A branch is a separate line of development 
+that allows developers to work on different 
+parts of a project.
+When we create a new branch, it does not 
+create a copy of all the files and folders 
+in our repo. It creates a new pointer to a 
+specific commit in our repo.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Tag -
 
-A tag is a label that is assigned to a specific commit in a repo and is used to mark important points in the project's history. Tags are simply a way to mark a specific commit and make it easy to refer to it in the future.
+A tag is a label that is assigned to a 
+specific commit in a repo and is used to 
+mark important points in the project's 
+history. Tags are simply a way to mark a 
+specific commit and make it easy to refer 
+to it in the future.
 
 Git tag tagname (ex. git tag drag_drop_working)
 
-The above command will add a tag to that recent commit with the name drag_drop_working. 
-After that, we created some new files, did some modifications, and then committed them, but this commit disturbed the project on that branch, and we want to go back to that working commit where we had given a tag.
+The above command will add a tag to that 
+recent commit with the name drag_drop_working. 
+After that, we created some new files, did 
+some modifications, and then committed them, 
+but this commit disturbed the project on that 
+branch, and we want to go back to that 
+working commit where we had given a tag.
 Use the below command to go back to some tags.
 .............................................................
 |   git checkout drag_drop_working                          |
@@ -138,13 +206,18 @@ delete a tag -
 .............................................................
 
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 Rollback -
-Supposing we have made multiple commits, let's say commit-1, commit-2, commit-3, ... commit-10,
-Now we are getting some problems after commit-8, and I want to go back to commit-8.
-Going back to that working commit is called a rollback.
-Rollback will remove all the commits after commit 8.
+Supposing we have made multiple commits, 
+let's say commit-1, commit-2, commit-3, 
+... commit-10,
+Now we are getting some problems after 
+commit-8, and I want to go back to commit-8.
+Going back to that working commit is called 
+a rollback.
+Rollback will remove all the commits after 
+commit 8.
 
 Rollback last commit -
 .............................................................
@@ -156,13 +229,18 @@ Rollback a specific commit -
 |  git revert b998e02                                       |
 .............................................................
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 Upstream  repository-
-When we clone a repo from GitHub, the GitHub repo is considered the upstream repo for our local repo.
+When we clone a repo from GitHub, the GitHub 
+repo is considered the upstream repo for our 
+local repo.
 
 Upstream  branch-
-When we create a branch in our local repo and push it to a remote repo, it will be referred to as an upstream branch to our local branch in that local repo.
+When we create a branch in our local repo and 
+push it to a remote repo, it will be referred 
+to as an upstream branch to our local branch 
+in that local repo.
 
 Create a new branch - 
 .............................................................
@@ -174,12 +252,18 @@ Pushing new branch to remote repo -
 |  git push origin  branch_name                             |
 .............................................................
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 Conflict merge -
-When multiple developers are working on different branches, sometimes they make changes to the same lines of that file and push their code to the upstream branch, but at the time of merging these two branches, Git can't determine which changes to keep, so it stops and marks the conflict there.
+When multiple developers are working on 
+different branches, sometimes they make 
+changes to the same lines of that file and 
+push their code to the upstream branch, but 
+at the time of merging these two branches, 
+Git can't determine which changes to keep, 
+so it stops and marks the conflict there.
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 Basic steps -
 
@@ -191,7 +275,7 @@ check history           git log  or git reflog
 rollback                git reset --hard
 push                    git push or git push origin branch_name
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Configuration - 
 .............................................................
@@ -216,9 +300,16 @@ Check Git version -
 -------------------------------------------------------------------------------------------------------------------
 
 I have two files, product_1 and product_2.
-I have modified both files and run the command git add.
-Now all the files have been moved to the stagging area.
-I realised that I have to make some more changes in the product_1 file and then move it to stage, but for now I have completed product_2 and want to remove product_1 from stagging. To achieve this, we have to run any command from below.
+I have modified both files and run the 
+command git add.
+Now all the files have been moved to the 
+stagging area.
+I realised that I have to make some more 
+changes in the product_1 file and then move 
+it to stage, but for now I have completed 
+product_2 and want to remove product_1 
+from stagging. To achieve this, we have 
+to run any command from below.
 .............................................................
 |  git reset product_1.ts                                   |
 .............................................................
@@ -232,8 +323,10 @@ I realised that I have to make some more changes in the product_1 file and then 
 |  git reset -p                                             |
 .............................................................
 
-On running this command, Git will not track that file.
-All the content of that file will be there. There will be no data loss.
+On running this command, Git will not track 
+that file.
+All the content of that file will be there. 
+There will be no data loss.
 
 -------------------------------------------------------------------------------------------------------------------
 
@@ -243,14 +336,17 @@ Git diff -
 .............................................................
 
 This command is used to see the modification.
-Whether that file is tracked, untracked, staged, or unstaged, we can view the difference made on that.
+Whether that file is tracked, untracked, 
+staged, or unstaged, we can view the 
+difference made on that.
 
 -------------------------------------------------------------------------------------------------------------------
 
 .............................................................
 |  git diff --staged                                        |
 .............................................................
-We want to see the changes that have been stagged but not committed.
+We want to see the changes that have been 
+stagged but not committed.
 
 -------------------------------------------------------------------------------------------------------------------
 
@@ -281,7 +377,8 @@ Branch  -
 .............................................................
 |  git branch                                               |
 .............................................................
-The current working branch will be shown in green with the * prefix.
+The current working branch will be shown in 
+green with the * prefix.
 
 Create a branch - 
 .............................................................
@@ -305,19 +402,26 @@ Create a new branch and checkout to that branch at the same time.
 
 
 detete specific branch - 
-You should not be in the same branch that you are going to delete; first checkout to another branch.
+You should not be in the same branch that 
+you are going to delete; first checkout to 
+another branch.
 
-When you have merged this branch with another branch - 
+When you have merged this branch with another 
+branch - 
 .............................................................
 |  git branch -d feature_2                                  |
 .............................................................
 
-When you have not merged this branch with another branch
+When you have not merged this branch with 
+another branch
 .............................................................
 |  git branch -D feature_2                              |
 .............................................................
 
-This will delete branches from your local repo only; to delete branches from a remote repo, you need to delete them from the github repo or run a command.
+This will delete branches from your local 
+repo only; to delete branches from a remote 
+repo, you need to delete them from the github 
+repo or run a command.
 .............................................................
 |  git push origin -d feature_2                             |
 .............................................................
@@ -326,31 +430,51 @@ This will delete branches from your local repo only; to delete branches from a r
 
 Rebase - 
 
-When we want to transfer the complete work of one branch to another branch, we use rebase.
-I have two branches, feature_1 and feature_2, both of which have different files and folders.
-To transfer all the work of featute_1 to featute_2, we first have to go to the feature_ branch.
+When we want to transfer the complete work 
+of one branch to another branch, we use 
+rebase.
+I have two branches, feature_1 and feature_2, 
+both of which have different files and 
+folders.
+To transfer all the work of featute_1 to 
+featute_2, we first have to go to the 
+feature_ branch.
 then run the command
 
 .............................................................
 |  git rebase feature_1                                     |
 .............................................................
 
-merge will create a new commit by merging all the commits of new_branch with the last commit of the current branch.
-Rebase will add all the commits of new_branch to the main branch after the last commit.
+merge will create a new commit by merging 
+all the commits of new_branch with the last 
+commit of the current branch.
+Rebase will add all the commits of new_branch 
+to the main branch after the last commit.
 
--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------
 
 Stash - 
 
-Suppose I am working on branch A, and I have made some changes to branch A. Now I have to work on branch B.
-When I try to checkout to branch B, I will get an error either to commit changes or stash changes before checkout to B because there are some changes in branch A.
-I don't want to commit those changes, so here stash is used to save the changes in the working directory, and I can checkout to any other branch after stash.
+Suppose I am working on branch A, and I have 
+made some changes to branch A. Now I have to 
+work on branch B.
+When I try to checkout to branch B, I will 
+get an error either to commit changes or 
+stash changes before checkout to B because 
+there are some changes in branch A.
+I don't want to commit those changes, so 
+here stash is used to save the changes in 
+the working directory, and I can checkout 
+to any other branch after stash.
 
 .............................................................
 |  git stash                                                |
 .............................................................
 
-When I come back to branch A, I will see my changes are not there, which I did before stashing. To get all my changes, I need to run a command.
+When I come back to branch A, I will see my 
+changes are not there, which I did before 
+stashing. To get all my changes, I need to 
+run a command.
 
 .............................................................
 |  git stash pop                                            |
@@ -409,27 +533,32 @@ Push all the tags to remote repo at a time -
 
 Git ignore -
 
-A .gitignore file is used to ignore specific files from unintentionally staging or comitting.
+A .gitignore file is used to ignore specific 
+files from unintentionally staging or 
+comitting.
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 Merge -
 
-Git merge will merge all the commits of one branch into the current branch.
+Git merge will merge all the commits of one 
+branch into the current branch.
 .............................................................
 |  git merge branch_name                                    |
 .............................................................
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 cherry-pick - 
 
-When I want to apply any specific commit from one branch to another branch, I will cherry pick.
+When I want to apply any specific commit 
+from one branch to another branch, I will 
+cherry pick.
 .............................................................
 |  git cherry-pick aab5172290c2285604a3bd6873084ddc88c004ea |
 .............................................................
 
--------------------------------------------------------------------------------------------------------------------
+---------------------------------------------
 
 
 

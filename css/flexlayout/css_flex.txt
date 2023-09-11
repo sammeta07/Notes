@@ -7,7 +7,7 @@ alignment
 order
 bootstrap 4 is built on the top of flex layout 
 
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 Terminology - 
 
@@ -22,25 +22,27 @@ Example -
   <div>item 1</div>
   <div>item 1</div>
 </div>
-___________________________________________________________________________________________________________________
+_____________________________________________
 Flexbox axis - 
 Main axis  - horizontal  X-axis
 Cross axis - verticle    Y-axis
 
-___________________________________________________________________________________________________________________
+_____________________________________________
 Flex container properties - 
 
 display - 
 mandatory to work with flex containers.
-creates either block level or inline level flex container.
+creates either block level or inline level 
+flex container.
 
 display: flex;
 display: inline-flex;
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 flex-direction - 
-defines the direction in which the flex items are placed in the container.
-by default the main axis flows from feft to right.
+defines the direction in which the flex items 
+are placed in the container. by default the 
+main axis flows from feft to right.
 
 flex direction has four values - 
 
@@ -48,11 +50,15 @@ flex-direction: row;
 flex-direction: row-reverse;
 flex-direction: column;
 flex-direction: column-reverse;
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 flex-wrap - 
-used to control the wrapping of items in a container.
-by default all the flex items in a container try to fit in a single line, if there is not enough space the items simply overflow. If i reduce the browser width items begin to shrink and then no longer in view.
+used to control the wrapping of items in a 
+container. by default all the flex items in 
+a container try to fit in a single line, 
+if there is not enough space the items simply 
+overflow. If i reduce the browser width items 
+begin to shrink and then no longer in view.
 we can fix this by using flex-wrap property.
 
 flex-wrap contains three values -
@@ -60,7 +66,7 @@ flex-wrap contains three values -
 flex-wrap: nowrap;    default value. no change in UI
 flex-wrap: wrap;
 flex-wrap: wrap-reverse;
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 flex-flow - 
 combination of flex-direction and flex-wrap.
@@ -69,15 +75,18 @@ flex-flow: <flex-direction><flex-wrap>
 flex-direction: row;
 flex-wrap: nowrap;
 
-we can use a single flex-flow property in place of above two properties.
-we can give any combination of flex-direction and flex-wrap.
+we can use a single flex-flow property in 
+place of above two properties. we can give 
+any combination of flex-direction and 
+flex-wrap.
 
 flex-flow: row nowrap; (4*3 = 12 combinations)
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 justify-content -
 
-defines the alignment of the items along the main axis by default.
+defines the alignment of the items along the 
+main axis by default.
 
 justify-content: flex-start; default
 justify-content: flex-end;
@@ -86,8 +95,9 @@ justify-content: space-around;
 justify-content: space-between;
 justify-content: space-evenly;
 
-If we set flex-direction to column. The items will be aligned vertically.
-___________________________________________________________________________________________________________________
+If we set flex-direction to column. The items 
+will be aligned vertically.
+_____________________________________________
 
 align-items - 
 
@@ -104,14 +114,19 @@ align-items: stretch; default
 align-items: flex-start;
 align-items: flex-end;
 align-items: baseline;
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 align-content - 
-defines the alignment of the items along the cross axis.
-this works only when there are multile rows of flex items in the container.
+defines the alignment of the items along the 
+cross axis. this works only when there are 
+multile rows of flex items in the container.
 
-suppose we have some items which dosent fit in a container and they will go out of the parent div.
-we use flex-wrap peoperty to wrap then in that container. now we will have multile rows, and align content can be applied on these multile rows only.
+suppose we have some items which dosent fit 
+in a container and they will go out of the 
+parent div. we use flex-wrap peoperty to wrap
+then in that container. now we will have 
+multile rows, and align content can be 
+applied on these multile rows only.
 
 ..............................................
 | item 1 | item 2 | item 3 | item 4 | item 5 |    --> row 1
@@ -134,13 +149,14 @@ align-content: flex-end;
 align-content: center; 
 align-content: space-between; 
 align-content: space-around; 
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 Flex item properties - 
 
 order - 
-controls the order in which the item appears in the flex container.
-bydefault all the items are arranged in some order.
+controls the order in which the item appears 
+in the flex container. bydefault all the items 
+are arranged in some order.
 
  <div class="container">
   <div class="flex-item item-1">item 1</div>      1st position
@@ -156,31 +172,40 @@ bydefault all the items are arranged in some order.
 ..............................................
 
 by default all the items are of order 0. 
-when we specifically give order property to item 3.
+when we specifically give order property to 
+item 3.
 
 .item-3{
   order: 1
 }
-by doing this item 3 will be pushed to end because all items bydefault have an order of 0. 
-1 is greater than 0.
+by doing this item 3 will be pushed to end 
+because all items bydefault have an order of 
+0. 1 is greater than 0.
 ..............................................
 | item 1 | item 2 | item 4 | item 5 | item 3 |    
 ..............................................
 |order 0 |order 0 |order 0 |order 0 |order 1 |
 ..............................................
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 flex-grow - 
-defines the ability for a flex item to grow if necessary.
+defines the ability for a flex item to grow 
+if necessary.
 
-items only take up the space which is required to for the content. There can me alot of extra space with in the container.
+items only take up the space which is required 
+to for the content. There can me alot of extra 
+space with in the container.
 
 ......................................................................................................
 | item 1 | item 2 | item 3 | item 4 | item 5 |  <-------------------EXTRA SPACE---------------------->
 ......................................................................................................
 
-sometimes we dont want those extraspace there, instead of this we want any item/items to take up this exyra space if available.
-bydefault all items have have the flex grow value of 0, because of this they dont take up the extra space.
+sometimes we dont want those extraspace there, 
+instead of this we want any item/items to take 
+up this exyra space if available.
+bydefault all items have have the flex grow 
+value of 0, because of this they dont take up 
+the extra space.
 
 .item-3{
   flex-grow: 1
@@ -189,33 +214,45 @@ bydefault all items have have the flex grow value of 0, because of this they don
   flex-grow: 3
 }
 
-by applying above css, item 3 will take the 25% of the extra space and item 1 will take the 75% of the extra space.
+by applying above css, item 3 will take the 
+25% of the extra space and item 1 will take 
+the 75% of the extra space.
 
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 flex-shrink - 
-defines the ability for a flex item to shrink if necessary.
-the default value of flex shrink is 1. when we decrease the width of screen all the flex items together shrink.
-these items shrink up to a limit and then after these items overflow.
-by setting shrink value to 0 we can prevent shrinking.
+defines the ability for a flex item to shrink 
+if necessary.
+the default value of flex shrink is 1. 
+when we decrease the width of screen all the 
+flex items together shrink.
+these items shrink up to a limit and then after 
+these items overflow.
+by setting shrink value to 0 we can prevent 
+shrinking.
 flex-shrink : 0;
 
 If i apply shrink value to item 2
 .item-2{
   flex-shrink: 3
 }
-when we decrease width if screen item 2 will shrink 3times more.
+when we decrease width if screen item 2 will 
+shrink 3times more.
 
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 flex-basis -
 this specifies the initial size of a flex item.
-bydefault flex-basis has a value of auto which sets the initial width based on the items content.In our case items width is dependent on the text content .
+bydefault flex-basis has a value of auto which 
+sets the initial width based on the items 
+content.In our case items width is dependent 
+on the text content .
 
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 flex - 
-a shorthand property for <flex-grow> <lex-shrink> & <flex-basis>
+a shorthand property for <flex-grow>, 
+<lex-shrink> & <flex-basis>
 
 .item{
   flex-grow:2;
@@ -226,15 +263,18 @@ a shorthand property for <flex-grow> <lex-shrink> & <flex-basis>
 .item{
   flex:2 4 200px;
 }
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 align-self - 
 allows alignment of individual flex items.
 
 default value of align-self is auto.
 align-self:auto;
-which means the item inherits the property from parent container's align-items value.
-if in parent container align-items value is flex-end, then the individual items inside that container will also be set to flex end.
+which means the item inherits the property 
+from parent container's align-items value.
+if in parent container align-items value is 
+flex-end, then the individual items inside 
+that container will also be set to flex end.
 
 align-self:flex-start;
 align-self:flex-end;
@@ -242,8 +282,9 @@ align-self:center;
 align-self:stretch;
 align-self:auto;    -->default value
 
-auto will inherit the value of align-items value from parent container.
-___________________________________________________________________________________________________________________
+auto will inherit the value of align-items 
+value from parent container.
+_____________________________________________
 
 display           flex
 flex-direction    row, row-reverse, column, column-reverse
@@ -252,7 +293,7 @@ flex-flow         <flex-direction><flex-wrap>
 justify-content   flex-start flex-end center space-around space-evenly space-between
 align-items       flex-start flex-end stretch baseline
 align-content     flex-start flex-end stretch center space-around space-between 
-___________________________________________________________________________________________________________________
+_____________________________________________
 
 order             number, 
 flex-grow         number, decimal values
@@ -261,4 +302,4 @@ flex-basis        % , auto, px, em, rem,
 flex              <flex-grow><flex-shrink><flex-basis>
 align-self        auto flex-start flex-end center stretch
 
-___________________________________________________________________________________________________________________
+_____________________________________________
